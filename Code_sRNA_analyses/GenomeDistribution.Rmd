@@ -1,0 +1,198 @@
+---
+title: "GenomeDistribution"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "17/04/2020"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.height = 4, fig.path='Figs/')
+```
+
+### Goal
+This script plots the distribution of piRNAs and siRNAs on different genomic features as annotated by Vectorbase version AaegL5.1. For this, small RNAs that mapped to overlapping features were assigned to only one feature with the following hierachy: open reading frames > non-coding RNAs (incl. lncRNAs, pseudogenes, snoRNAs, snRNAs, miRNAs) > LTR retrotransposons > Non-LTR retrotransposons (SINEs, LINEs, Penelope) > “Cut and paste” DNA transposons > other DNA transposons (Helitrons, MITEs) > satellite and tandem repeat features > DUST > other /unknown repeats.  
+This means that reads that mapped to a repeat feature and an intron or UTR were classified as repeat-derived, whereas all other reads mapping to introns or UTRs were considered as gene-derived.
+
+The following datasets were used for this analysis:
+  
+* SRR5961503 (Ae. aegypti soma, oxidized)  
+* SRR5961504 (Ae. aegypti germline, oxidized)  
+* SRR5961505 (Ae. aegypti soma)  
+* SRR5961506 (Ae. aegypti germline)  
+* RDVJ106	(Aag2 total sRNA input, uninfected)   
+
+Input files can be generated with:  
+GenomeDistribution.sh  
+
+  
+    
+#### Load required libraries
+
+Requires the following package:  
+
+* tidyverse 1.2.1
+
+```{r}
+library(tidyverse)
+```
+
+#### Set hierachy
+
+```{r}
+
+addHierachy = function(x){
+  
+  ifelse(grepl("protein-coding|CDS", x),"01_protein_coding",
+                                ifelse(grepl("noncoding|lncRNA|pseudogene|ncRNA|snoRNA|miRNA|snRNA|SRP", x), "02_ncRNAs",
+                                ifelse(grepl("LTR", x), "03_LTR_Retrotransposon", 
+                                ifelse(grepl("SINE|LINE|Penelope", x), "04_non_LTR_Retrotransposon",
+                                ifelse(grepl("DNA", x), "05_DNA_transposon",
+                                ifelse(grepl("Helitron|MITEs", x), "06_otherDNA_Transposons",
+                                ifelse(grepl("Satellite|trf", x), "07_Satellite",
+                                ifelse(grepl("dust", x), "08_dust",
+                                ifelse(grepl("none|no_feature", x), "11_other_sequence", 
+                                ifelse(grepl("repeat|UD|Unknown", x), "09_other_unknown_repeats",
+                                ifelse(grepl("intron|UTR", x), "01_protein_coding", "09_other_unknown_repeats")))))))))))
+}
+```
+
+#### Settings for plots
+
+```{r}
+
+mytheme = theme(axis.line = element_line(),
+                panel.grid.major = element_line(color="gray97"),
+                panel.background = element_blank()) 
+myfill =  scale_fill_manual(values=c("gray30", "gray60", 
+                                      "#A50026", "#D73027", "#F46D43", "#FDAE61", 
+                                      "#74ADD1", "#4575B4", "#313695",
+                                      "gray80"))
+```
+
+
+#### Read files 
+
+Summary files generated with GenomeDistribution.sh
+1. Summary of distribution of features on genome
+```{r}
+Dir  = "./Lewis2017/GenomeDistribution" #change to folder with data
+FilePath = dir("./Lewis2017/GenomeDistribution/", "piRNA")
+FilespiRNAs=file.path(Dir, FilePath)
+names=c("Aag2", "03_soma_OX", "04_germline_ox", "05_soma_n", "06_germline_n")
+
+names(FilespiRNAs)= names
+
+total=read_tsv("./Lewis2017/GenomeDistribution/summary_genome.tsv", col_names = F) %>% #change to folder with data
+        filter(!grepl("rRNA|tRNA", X1)) %>%
+        mutate(X1 = ifelse(X1 == "12_protUTRIntron", "01_protein_coding",
+                           ifelse(X1 == "13_ncRNA_intron", "02_ncRNAs", 
+                                  ifelse(X1 == "14_other_sequences", "11_other_sequence", X1)))) %>%
+        group_by(X1) %>%
+        summarize(total= sum(X2)) %>% 
+        mutate(total= total/ sum(as.numeric(.$total))) %>%
+        rename(class = X1)
+
+```
+
+2. Summary of piRNA-sized reads
+```{r}
+
+for (i in 1:length(FilespiRNAs)){
+      x= read_tsv(FilespiRNAs[i], col_names = F) %>%
+        filter(X1 != grepl("rRNA|tRNA", .$X1)) %>%
+        add_column(class= addHierachy(.$X1)) %>%
+        dplyr::select(-X1) %>% group_by(class) %>%
+        summarize(fraction= sum(as.numeric(X2))) %>% 
+        mutate(fraction= fraction/ sum(.$fraction))
+      
+      colnames(x)= c("class", paste(names(FilespiRNAs)[i]))
+      assign( paste("piRNA", names( FilespiRNAs)[i],  sep="_"), x)
+
+}                        
+```
+
+3. Summary of siRNA-sized reads
+```{r}
+FilePath2 = dir("./Lewis2017/GenomeDistribution", "siRNA") #change to folder with data
+FilessiRNAs=file.path(Dir, FilePath2)
+names=c("Aag2", "03_soma_OX", "04_germline_ox", "05_soma_n", "06_germline_n")
+
+names(FilessiRNAs)= names
+
+
+for (i in 1:length(FilessiRNAs)){
+      x= read_tsv(FilessiRNAs[i], col_names = F) %>%
+          filter(X1 != grepl("rRNA|tRNA", .$X1)) 
+      x= x[!grepl("miRNA", x$X1),]
+      x= x %>%  
+        add_column(class= addHierachy(.$X1)) %>%
+        dplyr::select(-X1) %>% 
+        group_by(class) %>%
+        summarize(fraction= sum(as.numeric(X2))) %>% 
+        mutate(fraction= fraction/ sum(.$fraction))
+      
+      colnames(x)= c("class", paste(names(FilespiRNAs)[i]))
+      assign(paste("siRNA", names( FilespiRNAs)[i],  sep="_"), x)
+
+}                      
+```
+
+
+#### plot piRNA distribution
+
+```{r piRNA_distr}
+piRNAs= left_join(total, piRNA_03_soma_OX) %>% 
+        left_join(piRNA_04_germline_ox) %>% 
+        left_join(piRNA_05_soma_n) %>% 
+        left_join(piRNA_06_germline_n) %>% 
+        left_join(piRNA_Aag2) %>%
+        gather( sample, fraction, 2:ncol(.))
+
+ggplot(piRNAs, aes(sample, fraction, fill=class)) + 
+        geom_bar(stat="identity") +
+        mytheme +
+        myfill
+
+```
+
+#### plot siRNA distribution
+```{r, siRNA_distr}
+siRNAs= left_join(total, siRNA_03_soma_OX) %>% 
+        left_join(siRNA_04_germline_ox) %>% 
+        left_join(siRNA_05_soma_n) %>% 
+        left_join(siRNA_06_germline_n) %>%
+        left_join(siRNA_Aag2) %>%
+        gather( sample, fraction, 2:ncol(.))
+
+ggplot(siRNAs, aes(sample, fraction, fill=class)) +
+        geom_bar(stat="identity") +
+        mytheme +
+        myfill
+```
+
+
+#### plot both siRNAs and piRNAs
+```{r sRNA_distr, fig.width=9}
+
+siRNAs2=siRNAs %>% 
+        add_column(sRNA=rep("siRNA", times=nrow(.))) %>% 
+        filter(sample != "total")
+
+
+all= piRNAs %>% 
+        add_column(sRNA=rep("piRNA", times=nrow(.))) %>% 
+        rbind(., siRNAs2) %>%
+        mutate(sRNA= ifelse(sample== "total", "Genome", sRNA)) %>% 
+        mutate(sRNA=factor(sRNA, levels=c("Genome", "siRNA", "piRNA")))
+
+
+ggplot(all, aes(sample, fraction, fill=class)) + geom_bar(stat="identity") +
+          theme(axis.line = element_line(),
+                panel.grid.major = element_line(color="gray97"),
+                panel.background = element_blank()) +
+          scale_fill_manual(values=c("gray30", "gray60", 
+                                           "#A50026", "#D73027", "#F46D43", "#FDAE61", 
+                                           "#74ADD1", "#4575B4", "#313695",
+                                           "gray80")) +
+        facet_grid(~sRNA, scales="free_x", space="free_x")
+```

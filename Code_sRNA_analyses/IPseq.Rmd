@@ -1,0 +1,176 @@
+---
+title: "IPseq"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "27/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path='Figs/')
+```
+
+### Goal
+This script will analyse the enrichment of tapiR1/2 piRNAs reads in the endogenous PIWI-IP. Samples used for that were:
+
+* RDVJ106: input, uninfected
+* RDVJ101: empty IP, uninfected
+* RDVJ102: Ago3 IP, uninfected
+* RDVJ103: Piwi4 IP, uninfected
+* RDVJ104: Piwi5 IP, uninfected
+* RDVJ105: Piwi6 IP, uninfected  
+
+Input files can be generated with:  
+AnalysisIPseq.sh  
+
+  
+#### Load required libraries
+
+Requires the following package:
+
+* tidyverse 1.2.1  
+
+```{r}
+library(tidyverse)
+
+```
+
+
+#### Load files for tapiR1
+
+```{r}
+Dir  = "./IPseq/Raw"  #change to folder with data
+FilePath = dir("./IPseq/Raw/", "*tapiR1")
+
+tapiR1Files=file.path(Dir, FilePath)
+
+names=c("4_Ago3", "1_Piwi4", "2_Piwi5", "3_Piwi6")
+
+names(tapiR1Files)= names
+
+
+for (i in 1:length(tapiR1Files)){
+          x= read_tsv(tapiR1Files[i], col_names = TRUE) 
+          y= log2(sum(sum(x$Count_IP)/ sum(x$Count_input)))
+          assign(paste(names(tapiR1Files)[i], "tapiR1", sep="_"), y)
+}
+
+```
+
+#### Load files for tapiR2
+```{r}
+Dir  = "./IPseq/Raw"  #change to folder with data
+FilePath = dir("./IPseq/Raw/", "*tapiR2")
+
+tapiR2Files=file.path(Dir, FilePath)
+
+names=c("4_Ago3", "1_Piwi4", "2_Piwi5", "3_Piwi6")
+
+names(tapiR2Files)= names
+
+
+for (i in 1:length(tapiR2Files)){
+          x= read_tsv(tapiR2Files[i], col_names = TRUE) 
+          y= log2(sum(sum(x$Count_IP)/ sum(x$Count_input)))
+          assign(paste(names(tapiR2Files)[i], "tapiR2", sep="_"), y)
+}
+
+```
+
+
+
+#### Plot enrichment of tapiR1/2
+
+Enrichment of both tapiR1 and 2 over input in all four IPs
+
+```{r enrichment, fig.width= 4}
+
+enr= tibble(piRNA= rep(c("tapiR1", "tapiR2"), times=4),
+            sample=rep(names, each=2),
+            enrichment=c(`4_Ago3_tapiR1`, `4_Ago3_tapiR2`,
+                         `1_Piwi4_tapiR1`, `1_Piwi4_tapiR2`,
+                         `2_Piwi5_tapiR1`, `2_Piwi5_tapiR2`,
+                         `3_Piwi6_tapiR1`, `3_Piwi6_tapiR2`))
+
+ggplot(enr, aes(sample, enrichment, fill= piRNA, group=piRNA)) + 
+      geom_bar(stat="identity", position = "dodge", color="black") +
+      theme(axis.line = element_line(),
+                panel.grid.major = element_blank(),
+                panel.background = element_blank()) +
+      scale_fill_manual(values=c( "#ABD9E9", "#4575B4")) +ylim(-2.5,5)
+
+
+```
+
+
+#### Piwi4 IP
+
+Plot count of tapiR1 and 2, or other reads enriched in Piwi4 IP
+
+```{r Piwi4, fig.width=3}
+
+Dir  = "./IPseq/Raw"  #change to folder with data
+FilePath = dir("./IPseq/Raw/", "RDVJ103.enriched")
+
+IPFiles=file.path(Dir, FilePath)
+
+Piw4IP= read_tsv(IPFiles, col_names = TRUE)
+
+
+Piwi4IP  = Piw4IP %>% mutate(piRNA=ifelse(Chrom==3 & 
+                                            (End==41157596 |
+                                    				 End==41158652 |
+                                    				 End==41158499 |
+                                    				 End==41158348 |
+                                    				 End==41158197 |
+                                    				 End==41158047 |
+                                    				 End==41157894 |
+                                    				 End==41157744 |
+                                    				 End==41157449 |
+                                    				 End==41157301 |
+                                    				 End==41157150 |
+                                    				 End==41157002 |
+                                    				 End==41156851 |
+                                    				 End==41156703 |
+                                    				 End==41156553 |
+                                    				 End==41156405 |
+                                    				 End==41156255 |
+                                    				 End==41156105 |
+                                    				 End==41155955 |
+                                    				 End==41155805), "tapiR1", 
+                                    ifelse(Chrom==3 & 
+                                             (End==41158739 |
+                                    				 End==41158593 |
+                                    				 End==41158440 |
+                                    				 End==41158289 |
+                                    				 End==41158138 |
+                                    				 End==41157988 |
+                                    				 End==41157835 |
+                                    				 End==41157685 |
+                                    				 End==41157538 |
+                                    				 End==41157390 |
+                                    				 End==41157242 |
+                                    				 End==41157091 |
+                                    				 End==41156943 |
+                                    				 End==41156792 |
+                                    				 End==41156644 |
+                                    				 End==41156494 |
+                                    				 End==41156346 |
+                                    				 End==41156196 |
+                                    				 End==41156046 |
+                                    				 End==41155896 |
+                                    				 End==41155746), "tapiR2", "others"))) %>%
+  
+          group_by(piRNA) %>% 
+          summarize(mean= mean(Corr_count)) %>% 
+          mutate(mean= mean/sum(mean)) %>%
+          add_column(IP= rep("Piwi4", 3)) %>% 
+          mutate(piRNA= factor(piRNA, levels=c("tapiR1", "tapiR2", "others")))
+
+ggplot(Piwi4IP, aes(IP, mean, fill=piRNA)) + 
+          geom_bar(stat="identity", color="black") +
+          theme(axis.line = element_line(),
+                panel.grid.major = element_blank(),
+                panel.background = element_blank()) +
+          scale_fill_manual(values=c( "#ABD9E9", "#4575B4", "gray80"))
+```

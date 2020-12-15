@@ -1,0 +1,103 @@
+---
+title: "tapiRLocusCoverage_sRNAs"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "27/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set( fig.path='Figs/', fig.height =3, fig.width = 8)
+```
+
+
+#### Goal
+This script will plot the size profile for tapiR1/2 reads.  
+   
+Input files can be generated with:  
+tapiRLocusCoverage_sRNA.sh  
+
+
+#### Load required libraries
+
+Requires the following packages:
+
+* dplyr 0.8.3
+* rtracklayer 1.44.2
+* GenomicFeatures 1.36.4
+* Gviz 1.28.1  
+
+```{r, message=F}
+library(dplyr)
+library(rtracklayer)
+library(GenomicFeatures)
+library(Gviz)
+
+```
+
+
+#### Load bed files (already normalzed to 1 mio. miRNAs)
+
+```{r}
+Dir  = "./Lewis2017/coverage" # change to directory with files
+FilePath = dir("./Lewis2017/coverage/", "RDVJ106.*.bed")
+FilesCov=file.path(Dir, FilePath)
+
+
+cov= import.bed(FilesCov)
+cov$name = (as.numeric(cov$name) * -1) #locus on reverse strand
+
+
+```
+
+#### Prepare axis/annotation tracks
+
+```{r}
+
+#Axis track
+axtrack= GenomeAxisTrack(fontcolor="black")
+
+
+#Gene annotation track
+#Basefeatures from vectorBase
+genetr= import.gff3("./Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1.gff3") %>% #change path to directory with annotation files
+        subset(., grepl("AAEL017385.*", .$Parent)) 
+
+AaeTxdb= makeTxDbFromGRanges(genetr) 
+
+gr = exonsBy(AaeTxdb, by = "tx", use.names=TRUE)
+gr = unlist(gr)
+elementMetadata(gr)$transcript = names(gr)
+
+gentr2= GeneRegionTrack(gr, 
+                        transcriptAnnotation= "transcript", 
+                        shape="fixedArrow", 
+                        fill= "#ABD9E9", 
+                        arrowHeadMaxWidth=10, 
+                        fontcolor.group="black", 
+                        options(ucscChromosomeNames=FALSE))
+
+
+```
+
+#### Plot sRNA coverage tapiR locus
+```{r}
+
+#Data track
+Aag2_Track= DataTrack(cov, options(ucscChromosomeNames=FALSE), 
+                      name="Reads per 1 Mio. miRNAs", 
+                      type="histogram", 
+                      fill.histogram="#313695")
+
+plotTracks(list(axtrack, gentr2, Aag2_Track), 
+           from=41155000, 
+           to=41160000, 
+           extend.left = 500,
+          col.title="black", 
+          col.axis="black",
+          background.title="white", 
+          cex.axis=0.6, 
+          sizes = c(1,0.5, 1))
+```
+
+

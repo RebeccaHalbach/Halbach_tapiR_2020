@@ -1,0 +1,185 @@
+---
+title: "PrepareAnnotationFiles"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "17/04/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Goal
+
+This script cleans up annotation data from VectorBase (AaegL5.1) for later use. It extracts introns from protein-coding genes, lncRNAs and pseudogenes, 
+and extracts biotype/ID/Parent name also for exons.
+It will first extract protein-coding genes and for them drop exon annotations, as they are duplicates of CDS and UTRs.
+For ncRNAs exon features are retained, and type "transcript" is replaced by type "lncRNA".  
+Annotation retrieved from VectorBase (Aedes aegypti gene set AaegL5.1)  
+
+
+#### Load libraries
+
+Requires the following packages:  
+
+* rtracklayer 1.44.2
+* GenomicRanges 1.36.0
+* tidyverse 1.2.1
+
+```{r, echo=FALSE}
+
+library(rtracklayer)
+library(GenomicRanges)
+library(tidyverse)
+
+```
+
+### Clean-up annotation data
+
+```{r}
+Ann= import.gff3("./Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1.gff3") %>% #change to folder with annotation data
+      .[.$type != "chromosome" & .$type != "supercontig"]
+```
+
+1. First extract protein_coding genes
+
+```{r}
+protGenes= Ann %>% 
+    subset(., biotype== "protein_coding") %>%
+    .$ID %>% 
+    sub("-.*", "", .) %>% 
+    unique 
+
+#extract all exons/ UTRs 
+
+Ann2 = Ann[, c("type", 
+               "ID", 
+               "biotype", 
+               "Parent")] %>% 
+    subset(., type != "gene")
+Ann2$ID = sub("-.*", "", Ann2$ID)
+Ann2$Parent = as.character((sub("-.*", "", Ann2$Parent)))
+
+
+#need to first convert to tibble
+#because unique on GRanges only considers ranges
+#and no metadata
+#-> gene with only one exon and no UTRs otherwise only 
+#be called mRNA and not have exon
+#doesn't matter in above command
+prot = subset(Ann2, Ann2$Parent %in% protGenes | Ann2$ID %in% protGenes) %>% 
+    subset(., type != "exon") %>% 
+    as_tibble() %>% 
+    unique %>% 
+    makeGRangesFromDataFrame(., keep.extra.columns = TRUE)     
+      
+# get introns (parent information is lost, but is not needed for analysis)
+
+introns= GenomicRanges::setdiff(subset( prot, type == "mRNA"), subset( prot, type != "mRNA"))
+values(introns)= DataFrame(type = rep("intron", length(introns)), 
+                        ID   = rep( NA, length(introns)),
+                        biotype= rep(NA, length(introns)),
+                        Parent= rep(NA, length(introns)))
+prot= prot %>% c(., introns)
+
+#Ordernig the GRanges, then fill missing values with values from row above (that is from the mRNA)
+
+prot$type <- factor(prot$type, levels = c("mRNA", 
+                                          "five_prime_UTR", 
+                                          "CDS",
+                                          "intron", 
+                                          "three_prime_UTR"))
+
+prot= prot[order(seqnames(prot), start(prot), prot$type)]
+
+meta= as.data.frame(elementMetadata(prot)) %>% fill(ID, biotype, Parent)
+
+elementMetadata(prot) = meta
+
+export.gff3(prot, "./Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1_protein_coding.gff3")
+```
+
+2. Extract all ncRNAs  
+First, of all ncRNAs, extract all lncRNAs and pseudogenes, as they have introns...
+
+```{r}
+lncGenes = Ann %>% subset(., biotype== "lncRNA" | biotype == "pseudogene") %>% 
+    .$ID %>% 
+    sub("-.*", "", .) %>% 
+    unique 
+
+
+lncRNAs = subset(Ann2, Ann2$Parent %in% lncGenes | Ann2$ID %in% lncGenes) %>% 
+    subset(., type != "ncRNA_gene" & type != "pseudogenic_transcript")
+
+
+introns= GenomicRanges::setdiff(subset( lncRNAs, type == "lncRNA" | type == "transcript" | type == "pseudogene"), 
+                                subset( lncRNAs, type != "lncRNA" & type != "transcript" & type != "pseudogene"))
+
+values(introns)= DataFrame(type = rep("intron", length(introns)), 
+                        ID   = rep( NA, length(introns)),
+                        biotype= rep(NA, length(introns)),
+                        Parent= rep(NA, length(introns)))
+
+lncRNAs = lncRNAs %>% 
+  c(., introns)
+
+lncRNAs$type = factor(lncRNAs$type, levels = c("lncRNA", "transcript", "pseudogene" ,"exon", "intron"))
+
+lncRNAs= lncRNAs[order(seqnames(lncRNAs), start(lncRNAs), lncRNAs$type)]
+
+meta= as.data.frame(elementMetadata(lncRNAs)) %>% 
+    fill(ID, biotype, Parent) %>% 
+    mutate(type= replace(type, type == "transcript", "lncRNA"))
+
+elementMetadata(lncRNAs) = meta
+
+```
+
+...then do all other ncRNAs.
+
+```{r}
+ncGenes = Ann %>% 
+    subset(., type == "ncRNA_gene" & biotype != "lncRNA") %>%
+    .$ID %>% 
+    sub("-.*", "", .) %>% 
+    unique 
+
+ncRNAs = Ann2 %>% 
+    subset(., Ann2$Parent %in% ncGenes | Ann2$ID %in% ncGenes) %>% 
+    subset(., type != "ncRNA_gene" & type != "exon")
+
+```
+
+Combine all data
+
+```{r}
+ncRNAs = ncRNAs %>% c(., lncRNAs)
+
+ncRNAs$type = factor(ncRNAs$type, levels = c("lncRNA", 
+                                             "pseudogene", 
+                                             "exon", 
+                                             "intron",  
+                                             "tRNA", 
+                                             "snoRNA", 
+                                             "pre_miRNA",
+                                             "rRNA","snRNA",
+                                             "SRP_RNA",  
+                                             "RNase_MRP_RNA", 
+                                             "RNase_P_RNA", 
+                                             "ncRNA"))
+
+ncRNAs= ncRNAs[order(seqnames(ncRNAs), start(ncRNAs), ncRNAs$type)]
+
+export(ncRNAs, "./Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1_ncRNA.gff3")
+
+All= c(prot,  ncRNAs) 
+All = sortSeqlevels(All)
+All = sort(All)
+  
+export(All, "./Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1_modified.gff3")
+
+```

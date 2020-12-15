@@ -1,0 +1,113 @@
+---
+title: "SizeProfile"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "27/04/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path='Figs/', fig.height =5, fig.width = 4 )
+```
+
+### Goal
+
+This script is plotting the size profile of tapiR1 and 2 reads in different tissues
+Library used:
+
+* RDVJ106 (Aag2 total sRNA input, uninfected)     
+  
+Input files can be generated with:  
+GenomeDistribution.sh  
+
+
+#### Load required libraries
+
+Requires the following package:
+
+* tidyverse 1.2.1  
+
+```{r}
+library(tidyverse)
+
+```
+
+
+#### Import files for tapiR1
+```{r}
+Dir  = "./Lewis2017/Lengthprofiles"  #change to folder with data
+FilePath = dir("./Lewis2017/Lengthprofiles/", "*tapiR1")
+FilestapiR1=file.path(Dir, FilePath)
+names=c("01_106_Aag2", "03_soma_OX", "04_germline_ox", "05_soma_n", "06_germline_n")
+
+names(FilestapiR1)= names
+
+tapiR1= read_delim(FilestapiR1[1], col_names = FALSE, delim = "\t") %>% 
+        filter(X1 >= 23 & X1 <= 32) %>% 
+        dplyr::rename(Length= X1) %>%  
+        dplyr::select(-X2) 
+
+for (i in 1: length(FilestapiR1)){
+  
+  x= read_delim(FilestapiR1[i], col_names = FALSE, delim = "\t")
+  y= x %>% mutate(X2= X2/sum(.$X2)) 
+  colnames(y)= c("Length", paste(names(FilestapiR1)[i]))
+  tapiR1= tapiR1 %>% left_join(., y, by= "Length")
+  
+}
+```
+
+
+#### Import files for tapiR2
+```{r}
+Dir2  = "./Lewis2017/Lengthprofiles"  #change to folder with data
+FilePath2= dir("./Lewis2017/Lengthprofiles/", "tapiR2")
+
+FilestapiR2 = file.path(Dir2, FilePath2)
+names(FilestapiR2) = names
+
+
+tapiR2= read_delim(FilestapiR2[1], col_names = FALSE, delim = "\t") %>% 
+      filter(X1 >= 23 & X1 <= 32) %>% 
+      dplyr::rename(Length= X1) %>%  dplyr::select(-X2) 
+
+for (i in 1: length(FilestapiR2)){
+  
+  x= read_delim(FilestapiR2[i], col_names = FALSE, delim = "\t")
+  y= x %>% mutate(X2= X2/sum(.$X2)) 
+  colnames(y)= c("Length", paste(names(FilestapiR2)[i]))
+  tapiR2= tapiR2 %>% left_join(., y, by= "Length")
+  
+}
+
+```
+
+
+#### plot size profile
+
+```{r lengthprofiles}
+tapiR1_long= tapiR1 %>% 
+        gather( sample, proportion, 2:ncol(.)) %>% 
+        add_column(piRNA= rep("tapiR1", times= nrow(.)))
+
+tapiR2_long= tapiR2 %>% 
+        gather( sample, proportion, 2:ncol(.)) %>% 
+        add_column(piRNA= rep("tapiR2", times= nrow(.)))
+
+allpiRNAs= tapiR1_long %>% 
+        bind_rows(tapiR2_long)
+
+ggplot(allpiRNAs, aes(factor(Length), proportion)) + geom_bar(stat= "identity") + 
+                                                    theme(axis.line = element_line(),
+                                                           panel.grid.major = element_line(color="gray97"),
+                                                           panel.background = element_blank(),
+                                                           strip.text.y = element_text(angle = 360)) +
+                                                    scale_y_continuous(breaks= c(0, 0.5, 1))+
+                                                    scale_x_discrete(breaks= c(23, 28, 32))+
+                                                    facet_grid( sample ~ piRNA) 
+
+
+
+
+```
