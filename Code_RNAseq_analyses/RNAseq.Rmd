@@ -1,0 +1,1148 @@
+---
+title: "tapiR_RNAseq"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "04/05/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE )
+```
+
+
+### Goal
+This script analyses RNAseq experiments of Aag2 cells transfected with 500nM tapiR1 antisense oligos, or Ae. aegypti embryos injected with 50uM tapiR1 antisense oligos.
+It requires the quatification output files from STAR (genes) as well as Salmon (transposons), gene annotation of AaegL5.1 in gff3 format, a list of TEs from TEfam (https://tefam.biochem.vt.edu/tefam), and the Ae. aegypti orgDb generated and installed with orgDb.RmD (lternatively can be downloaded [here](https://www.dropbox.com/sh/82g0lkktz4z8pwy/AABnhUJlnOfI7k_A9bUnYz1Ya?dl=0)).  
+  
+The following libaries were used:  
+
+* Aag2 control AO (RDVJ107-109)(SRR7938854, SRR7938851, SRR7938865)
+* Aag2 tapiR1 AO (RDVJ110-112)(SRR7938864, SRR7938862, SRR7938861)
+* Embryos control AO (RDVJ150-154)(SRR7938863, SRR7938866, SRR7938853, SRR7938852, SRR7938856)
+* Embryos tapiR1 AO (RDVJ155-159)(SRR7938855, SRR7938858, SRR7938857, SRR7938860, SRR7938859)
+* Embryos collected at different timepoints after egg laying (Akbari et al, G3 (Bethesda), 2013)(SRR923702, SRR923826, SRR923837, SRR923853)
+
+
+#### Load packages
+
+Requires the following packages:  
+
+* tidyverse 1.2.1
+* org.Aaegypti.eg.db 0.2
+* DESeq2 1.24.0
+* tximport 1.12.3 
+* ggforce 0.3.1 
+* clusterProfiler 3.12.0
+* latticeExtra 0.6-28
+* rtracklayer 1.44.2
+* venneuler 1.1-0  
+
+
+```{r, message=FALSE}
+library(tidyverse)
+library(org.Aaegypti.eg.db)
+library(DESeq2)
+library(tximport)
+library(ggforce)
+library(clusterProfiler)
+library(latticeExtra)
+library(rtracklayer)
+library(venneuler)
+
+```
+
+
+```{r}
+set.seed(123)
+```
+
+
+### General settings
+
+1. Folders used:
+
+```{r}
+
+#change paths to directories that contain data
+dirAnnotationData <- "./Annotation"
+dirRawDataRNAHybrid <- "./RawData/RNAHybridOutput"
+dirRawDataAag2Cells <- "./RawData/Aag2cells"
+dirRawDataEmbryos <- "./RawData/Embryos"
+dirRawDataAkbari <- "./RawData/Akbari"
+
+```
+
+2. Variables used:
+
+```{r}
+
+valueDESeqAlpha <- 0.01
+valueDEseqLfcThreshold <- 0.5
+pvalueGO <- 0.05
+        
+```
+
+3. Get annotation  
+Extract annotation from Ae. aegypti orgDb (constructed with OrdDb.Rmd), and type of gene (e.g. protein-coding...) from gff3 file (AaegL5.1, downloaded from https://www.vectorbase.org)
+
+```{r}
+
+geneDescription <- select(org.Aaegypti.eg.db, 
+                 columns = c("GID", "REFSEQ", "GENENAME", "GENELENGTH"),
+                 keytype = "GID", 
+                 keys(org.Aaegypti.eg.db, keytype = "GID")) %>%
+            mutate(GENELENGTH = as.numeric(GENELENGTH))
+
+
+#add description from NCBI
+#load gtf annotation file which contains description
+filePath <- dir( dirAnnotationData, "BASEFEATURES.AaegL5.1.gff3")
+fileTranscriptome <-file.path(dirAnnotationData, filePath)
+
+
+transcriptomeGFF <- import(fileTranscriptome, 
+                 format = "gff3") 
+
+geneIDs <- tibble(Name = transcriptomeGFF$ID, 
+                 biotype = transcriptomeGFF$biotype) %>%
+        drop_na() %>%
+        mutate(Name= sub("-.*", "", Name)) %>%
+        unique()
+
+
+#combine with Vector base annotation
+geneAnnotation <- geneDescription %>% 
+                left_join(geneIDs, by= c("GID"="Name")) %>%
+                filter(biotype != "nontranslating_CDS")
+
+```
+
+4. Import output from RNAHybrid  
+RNAHybrid was run with the online tool available at https://bibiserv.cebitec.uni-bielefeld.de/rnahybrid/, with tapiR1 as input miRNA sequence and the Ae. aegypti transcriptome as input target sequences, and helix constraints from nt2-7, no G:U in the seed, and compact output specified.
+
+```{r aag2_targeting}
+
+filePath <- dir(dirRawDataRNAHybrid, ".txt")
+filesRNAHybrid <- file.path(dirRawDataRNAHybrid, filePath)
+
+RNAHybridOutput <- read_delim(filesRNAHybrid, delim = ":", 
+                           col_names = FALSE)%>%
+                dplyr::select(c(2,6))
+
+##there are several genes with different target sites in different isoforms
+##Therefore, only consider strongest target site
+##(as is has highest chance to be functional and might therefore dominate effect observed on gene level)
+
+RNAHybridOutput <- RNAHybridOutput %>% 
+                mutate(X2 = sub("-.*", "", X2)) %>% 
+                group_by(X2) %>% 
+                summarise(mfe = min(X6))
+```
+
+5. Import TE data 
+Transposon annotation obtained from TEfam (https://tefam.biochem.vt.edu/tefam)
+
+```{r}
+
+filePath <- dir(dirAnnotationData, "TEfam_list")
+TEs <- file.path(dirAnnotationData, filePath)
+
+TEs <- read_tsv(TEs) %>% 
+        unite(TE_name, 1:2, sep = "|") 
+    
+#Gene vs Transcript matrix
+matrixTEs <- tibble(Transcript_ID = TEs$TE_name, 
+                        Gene_ID = TEs$TE_name)
+
+```
+
+6. Data from luciferase assay
+Indicating which target sites were sufficient to supress luciferase gene expression (see Halbach et al, Nature 2020, Extended Data Fig. 7)
+(Excluding genes that are not annotated in the AaegL5.1 data set any more (in contrast to AaegL3), as they are not in the gene list for RNAseq)
+
+```{r}
+
+lucassay_positive <- c("AAEL022223", 
+                       "AAEL001555", 
+                       "AAEL023448", 
+                       "AAEL026349", 
+                       "AAEL021117", 
+                       "AAEL023667", 
+                       "AAEL026626", 
+                       "AAEL008511", 
+                       "AAEL019943")
+
+lucassay_negative <- c("AAEL019724", 
+                       "AAEL003434", 
+                       "AAEL010190", 
+                       "AAEL010232", 
+                       "AAEL002666", 
+                       "AAEL009585", 
+                       "AAEL025784", 
+                       "AAEL19707", 
+                       "AAEL025586", 
+                       "AAEL021753")
+
+```
+
+7. Layout for plots:
+
+```{r}
+
+mytheme <- theme(legend.title = element_blank(), 
+                legend.text = element_text(40), 
+                panel.background = element_blank(),
+                axis.line = element_line(), 
+                panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                legend.key = element_blank())
+
+myplot <- list(scale_x_continuous(trans="log2", limits=c(1,NA)), 
+          scale_y_continuous(trans="log2", limits=c(1,NA)),
+          geom_abline(slope = 1, intercept = 0), 
+          geom_abline(slope = 1, intercept= 1), 
+          geom_abline(slope = 1, intercept= -1))
+
+```
+
+
+## tapiR1 AO-treatment in Aag2 cells
+
+### DE gene expression analysis
+
+1. Load quantification files
+Datasets mapped and quantified with STAR
+
+```{r, message=FALSE}
+
+filePath <- dir(dirRawDataAag2Cells, "ReadsPerGene.out.tab")
+filesAag2 <- file.path(dirRawDataAag2Cells, filePath)
+
+SampleNames <- c("controlAO_1", "controlAO_2", "controlAO_3", "tapiR1AO_1", "tapiR1AO_2", "tapiR1AO_3")
+names(filesAag2) <- paste0(SampleNames)
+
+countMatrixAag2 <- read_delim(filesAag2[1], 
+                                delim ="\t", 
+                                col_names=FALSE) %>% 
+                        dplyr::select(gene = X1) %>%
+                        dplyr::slice(5:n())
+                       
+
+#import count tables from STAR
+
+for (i in 1: length(filesAag2)){
+        
+  x <- read_delim(filesAag2[i], 
+                  delim = "\t", 
+                  col_names = FALSE) %>%
+          dplyr::select(c(1,4)) %>%
+          dplyr::slice(5:n())
+  
+  colnames(x) <- c("gene", names(filesAag2)[i])
+  
+  countMatrixAag2 <- left_join(countMatrixAag2, x, by= "gene")
+}
+
+countMatrixAag2 <- countMatrixAag2 %>% 
+        na.omit %>% 
+        as.data.frame
+
+rownames(countMatrixAag2) <- countMatrixAag2$gene
+
+countMatrixAag2 <- as.matrix(countMatrixAag2[, 2:7])
+
+```
+
+2. Create DESeq object/ quality check
+
+```{r PCA}
+
+sampleTableAag2 <- data.frame(condition = factor(rep(c("Control", "tapiR1AO"), each = 3), 
+                                            levels =c("Control", "tapiR1AO")))
+
+rownames(sampleTableAag2) <- colnames(countMatrixAag2)
+
+#create DESeq object
+
+ddsAag2 <- DESeqDataSetFromMatrix(countData = countMatrixAag2, 
+                                  colData = sampleTableAag2, 
+                                  design = ~condition)
+
+#PCA plot to check groups/ quality control
+rld <- rlog(ddsAag2, 
+            blind = TRUE)
+plotPCA(rld)
+
+
+#filter low counts
+ddsAag2 <- ddsAag2[rowSums(counts(ddsAag2)) > 1, ]
+
+```
+
+3. Statistical testing
+
+```{r}
+
+DEseqAag2 <- DESeq(ddsAag2, 
+                   quiet = TRUE)
+
+
+sizeFactors(DEseqAag2) #check size factors of libraries for normalization (used for normalization genome browser tracks)
+
+resultsDEseqAag2 <- results(DEseqAag2, 
+                        alpha = valueDESeqAlpha, 
+                        lfcThreshold = valueDEseqLfcThreshold)
+
+summary(resultsDEseqAag2)
+
+
+resultsDEseqAag2 <- resultsDEseqAag2 %>%  
+        as.data.frame() %>%
+        rownames_to_column(var = "geneID") %>%  
+        as_tibble()
+
+#construct table with results from DESeq and annotation data
+resultsDEseqAag2 <- left_join(resultsDEseqAag2, 
+                          geneAnnotation, 
+                          by = c("geneID" = "GID")) %>% 
+                arrange(.,desc(log2FoldChange))%>% 
+                add_column(biotype_sign = ifelse(.$padj <= valueDESeqAlpha, .$biotype, "not_significant")) %>% 
+                replace_na(list(biotype_sign = "not_significant"))
+
+
+write_tsv(resultsDEseqAag2[, c(1, 8, 2:7, 9, 11)], "DE_Genes_Aag2.tsv")
+
+```
+
+4. Plotting expression of all genes
+
+```{r Aag2_expression}
+
+countsAag2 <- counts(DEseqAag2,
+                      normalized = TRUE,
+                      replaced = FALSE) %>% 
+                as.data.frame() %>% 
+                rownames_to_column() %>% 
+                as_tibble %>% 
+                group_by(rowname) %>% 
+                summarize(meanControl = mean(controlAO_1:controlAO_3), 
+                          meanTapiR = mean(tapiR1AO_1:tapiR1AO_3)) %>%
+                mutate(meanControl = meanControl + 1, 
+                       meanTapiR = meanTapiR + 1) %>%  #add pseudo-count of 1 in order to plot logarithmic
+                left_join(resultsDEseqAag2[,c("geneID", "biotype_sign")], 
+                          by =c("rowname"="geneID"))
+
+ggplot() +
+        geom_point(data = countsAag2[countsAag2$biotype_sign == "not_significant", ], 
+                   aes(meanControl, meanTapiR, color = biotype_sign)) +
+        geom_point(data = countsAag2[countsAag2$biotype_sign == "protein_coding", ], 
+                   aes(meanControl, meanTapiR, color = biotype_sign)) +
+        geom_point(data = countsAag2[countsAag2$biotype_sign == "lncRNA", ], 
+                   aes(meanControl, meanTapiR, color = biotype_sign)) +
+        geom_point(data=countsAag2[countsAag2$biotype_sign == "pseudogene", ],
+                   aes(meanControl, meanTapiR, color = biotype_sign)) +
+        scale_color_manual(values = c('#A50026', '#CCCCCC', '#74ADD1')) +
+        myplot +
+        mytheme
+
+```
+
+5. Targeting by tapiR1
+
+Plot mfe of all predicted tapiR1 target sites (by RNAHybrid) vs observed fold change (+ indicate target sites that were tested in luciferase assay -> Extended Data Fig. 7), and depict the fold changes of genes with and without predicted target site.  
+
+```{r Aag2_targeting, , fig.width=4}
+
+#add RNAhybrid output
+resultsDEseqAag2 <- resultsDEseqAag2 %>% 
+        left_join(RNAHybridOutput, 
+                  by = c("geneID"="X2"))
+
+ggplot() +
+         geom_point(data = resultsDEseqAag2[resultsDEseqAag2$mfe < 0,], 
+                    aes(x = log2FoldChange, y = mfe), 
+                    alpha = 0.25) +
+         geom_point(data = resultsDEseqAag2[resultsDEseqAag2$geneID %in% lucassay_negative, ], 
+                    aes(x = log2FoldChange, y = mfe),  
+                    color = "#D73027",  #red
+                    size = 2.5) +
+         geom_point(data = resultsDEseqAag2[resultsDEseqAag2$geneID %in% lucassay_positive, ], 
+                    aes(x = log2FoldChange, y = mfe),  
+                    color = "#313695",   #blue
+                    size =2.5) +
+         xlim(-6,10.5) +
+        mytheme
+
+```
+
+```{r Aag2_targeting3, fig.width=2}
+
+ggplot(resultsDEseqAag2, aes( mfe == 0, log2FoldChange, fill = mfe == 0))+ 
+        geom_violin(show.legend = F) +
+        scale_fill_manual(values = c("#313695", "#A50026")) +
+        mytheme +
+        ylim(-6,10.5)
+  
+```
+
+6. GO term analysis
+
+Gene set enrichment for all genes (-> there was no enrichment)
+
+```{r}
+
+resultsCodingGenes <- resultsDEseqAag2 %>% 
+        filter(biotype != "lncRNA") %>%         #filter out lncRNAs as these cannot have an associated GO term
+        dplyr::select(geneID, log2FoldChange, padj, mfe) %>%  
+        replace_na(list(padj = 1)) 
+
+geneListAag2 <- resultsCodingGenes$log2FoldChange
+names(geneListAag2) <- resultsCodingGenes$geneID
+
+GOResultsAag2 <- gseGO(geneListAag2 = geneListAag2, 
+               OrgDb = org.Aaegypti.eg.db,
+               ont = "ALL",
+               keyType = "GID",
+               pvalueCutoff = pvalueGO)
+
+head(GOResultsAag2)
+
+```
+
+
+### DE transposon analysis
+
+
+1. Load quantification files
+
+Datasets quantified with Salmon
+
+```{r}
+
+filePath <- dir(dirRawDataAag2Cells, ".sf")
+filesTEsAag2 <- file.path(dirRawDataAag2Cells, filePath)
+
+names(filesTEsAag2) <- paste0(SampleNames)
+
+quantFilesTEsAag2 <- tximport(filesTEsAag2, 
+                              type = "salmon", 
+                              tx2gene = matrixTEs)
+
+```
+
+2. Create DESeq object
+
+```{r}
+
+#Create a DESeqDataSet
+ddsTEsAag2 <- DESeqDataSetFromTximport(quantFilesTEsAag2, 
+                                  colData = sampleTableAag2, 
+                                  design = ~condition)
+
+#filter low counts
+ddsTEsAag2 <- ddsTEsAag2[rowSums(counts(ddsTEsAag2)) > 1,]
+
+```
+
+3. Statistical testing
+
+```{r}
+
+DEseqTEsAag2 <- DESeq(ddsTEsAag2, 
+                      quiet = TRUE)
+
+resultsTEsAag2 <- results(DEseqTEsAag2, 
+                      alpha = valueDESeqAlpha, 
+                      lfcThreshold = valueDEseqLfcThreshold)
+
+summary(resultsTEsAag2)
+
+
+resultsTEsAag2 <- resultsTEsAag2 %>% 
+        as.data.frame() %>%
+        rownames_to_column(var = "TE_ID") %>%  
+        as_tibble() %>%
+        arrange(desc(log2FoldChange)) %>%
+        left_join(TEs, by = c("TE_ID" = "TE_name")) %>% 
+        add_column(., Subclass_sign = ifelse(.$padj <= valueDESeqAlpha, .$Subclass, "not_significant")) %>%
+        replace_na(list( Subclass_sign = "not_significant"))
+
+write_tsv(resultsTEsAag2[, c(1:7, 9:12)], "DE_transposons_Aag2.tsv")
+
+```
+
+4. Plotting expression of all TEs
+
+```{r, aag2_TEs}
+
+countsTEsAag2 <- counts(DEseqTEsAag2,
+                     normalized = TRUE,
+                     replaced = FALSE) %>% 
+                as.data.frame() %>% 
+                rownames_to_column() %>% 
+                as_tibble %>% 
+                group_by(rowname) %>% 
+                summarize(meanControl = mean(controlAO_1:controlAO_3), 
+                          meanTapiR = mean(tapiR1AO_1:tapiR1AO_3)) %>%
+                mutate(meanControl = meanControl + 1, meanTapiR = meanTapiR + 1) %>%  #add pseudo-count of 1 in order to plot logarithmic
+                left_join(resultsTEsAag2[ ,c("TE_ID", "Subclass_sign")], by = c("rowname"="TE_ID"))
+
+ggplot() +
+        geom_point(data = countsTEsAag2[countsTEsAag2$Subclass_sign == "not_significant", ], 
+                   aes(x = meanControl, y=meanTapiR, color = Subclass_sign)) +
+        geom_point(data = countsTEsAag2[countsTEsAag2$Subclass_sign == "LTR Retrotransposons", ], 
+                   aes(x = meanControl, y=meanTapiR, color = Subclass_sign))+
+        geom_point(data = countsTEsAag2[countsTEsAag2$Subclass_sign == "Non-LTR Retrotransposons", ], 
+                   aes(x = meanControl, y=meanTapiR, color = Subclass_sign))+
+        geom_point(data = countsTEsAag2[countsTEsAag2$Subclass_sign == "Cut and paste DNA transposon", ], 
+                   aes(x = meanControl, y=meanTapiR, color = Subclass_sign)) +
+        geom_point(data = countsTEsAag2[countsTEsAag2$Subclass_sign == "MITEs", ], 
+                   aes(x = meanControl, y=meanTapiR, color = Subclass_sign)) +
+        coord_fixed() +
+        scale_color_manual(values = c('#A50026',"#F46D43" , "#74ADD1", '#313695','#CCCCCC')) +
+        myplot +
+        mytheme
+                       
+```
+
+
+
+## tapiR1 AO injection into Ae aegypti embryos
+
+### DE gene expression analysis
+
+1. Load quantification files
+Datasets mapped and quantified with STAR
+
+```{r, message=FALSE}
+
+filePath <- dir(dirRawDataEmbryos, "ReadsPerGene.out.tab")
+FilesEmbryos <- file.path(dirRawDataEmbryos, filePath)
+
+SampleNames <- c("controlAO_1", "controlAO_2", "controlAO_3", "controlAO_4", "controlAO_5", 
+                 "tapiR1AO_1", "tapiR1AO_2", "tapiR1AO_3", "tapiR1AO_4", "tapiR1AO_5")
+
+names(FilesEmbryos) <- paste0(SampleNames)
+
+countMatrixEmbryos <- read_delim(FilesEmbryos[1], 
+                                 delim = "\t", 
+                                 col_names = FALSE)  %>% 
+                        dplyr::select(gene = X1) %>%
+                        dplyr::slice(5:n())
+
+
+
+for (i in 1: length(FilesEmbryos)){
+        
+         x <- read_delim(FilesEmbryos[i], 
+                  delim = "\t", 
+                  col_names = FALSE) %>%
+          dplyr::select(c(1,4)) %>%
+          dplyr::slice(5:n())
+  
+        colnames(x) <- c("gene", names(FilesEmbryos)[i])
+  
+        countMatrixEmbryos <- left_join(countMatrixEmbryos, x, by = "gene")
+        
+}
+
+
+countMatrixEmbryos <- countMatrixEmbryos %>% 
+        na.omit %>% 
+        as.data.frame
+
+rownames(countMatrixEmbryos) <- countMatrixEmbryos$gene
+
+countMatrixEmbryos <- as.matrix(countMatrixEmbryos[ , 2:11])
+
+```
+
+2. Create DESeq object/ quality check
+
+```{r PCA_Embryos}
+
+sampleTableEmbryo <- data.frame(condition = factor(rep(c("Control", "tapiR1AO"), each=5), 
+                                                   levels = c("Control", "tapiR1AO")))
+
+rownames(sampleTableEmbryo) <- colnames(countMatrixEmbryos)
+
+
+ddsEmbryos <- DESeqDataSetFromMatrix(countData = countMatrixEmbryos, 
+                                         colData = sampleTableEmbryo, 
+                                         design = ~condition)
+
+
+#PCA plot
+rld <- rlog(ddsEmbryos, blind = TRUE)
+plotPCA(rld)
+
+#Filter low counts
+ddsEmbryos <- ddsEmbryos[rowSums(counts(ddsEmbryos)) > 1,]
+
+```
+
+3. Statistical testing
+
+```{r}
+
+DEseqEmbryos <- DESeq(ddsEmbryos, 
+                   quiet = TRUE)
+
+sizeFactors(DEseqEmbryos)  #check size factors of libraries for normalization (used for normalization genome browser tracks)
+
+resultsDEseqEmbryos <- results(DEseqEmbryos, 
+                            alpha = valueDESeqAlpha, 
+                            lfcThreshold = valueDEseqLfcThreshold)
+
+summary(resultsDEseqEmbryos)
+
+
+
+resultsDEseqEmbryos <- resultsDEseqEmbryos %>%
+                as.data.frame() %>%
+                rownames_to_column(var = "geneID") %>%
+                as_tibble()
+
+#construct table with results from DESeq and annotation data
+resultsDEseqEmbryos <- resultsDEseqEmbryos %>%
+                left_join(geneAnnotation, by = c("geneID" = "GID")) %>% 
+                arrange(., desc(log2FoldChange)) %>%
+                add_column(., biotype_sign = ifelse(.$padj <= valueDESeqAlpha, .$biotype, "not_significant")) %>% 
+                replace_na(list(biotype_sign = "not_significant"))
+
+write_tsv(resultsDEseqEmbryos[, c(1, 8, 2:7, 9, 11)], "DE_Genes_Embryos.tsv")
+
+```
+
+4. Plotting expression of all genes
+
+```{r embryos_expression}
+
+countsEmbryos <- counts(DEseqEmbryos,
+                        normalized=TRUE,
+                        replaced=FALSE) %>% 
+                as.data.frame() %>% 
+                rownames_to_column() %>% 
+                as_tibble %>% 
+                group_by(rowname) %>% 
+                summarize(meanControl = mean(controlAO_1:controlAO_5), 
+                         meanTapiR = mean(tapiR1AO_1:tapiR1AO_5)) %>%
+                mutate(meanControl = meanControl + 1, meanTapiR = meanTapiR + 1) %>%  #add pseudo-count of 1 in order to plot logarithmic
+                left_join(resultsDEseqEmbryos[,c("geneID", "biotype_sign")], 
+                          by = c("rowname"="geneID"))
+
+ggplot() +
+        geom_point(data = countsEmbryos[countsEmbryos$biotype_sign == "not_significant",], 
+                   aes(meanControl, meanTapiR, color=biotype_sign)) +
+        geom_point(data = countsEmbryos[countsEmbryos$biotype_sign == "protein_coding",], 
+                   aes(meanControl, meanTapiR, color=biotype_sign)) +
+        geom_point(data = countsEmbryos[countsEmbryos$biotype_sign == "lncRNA",], 
+                   aes(meanControl, meanTapiR, color=biotype_sign)) +
+        geom_point(data = countsEmbryos[countsEmbryos$biotype_sign == "pseudogene",], 
+                   aes(meanControl, meanTapiR, color=biotype_sign)) +
+        scale_color_manual(values = c('#A50026', '#CCCCCC', '#74ADD1', '#313695') ) +
+        myplot +
+        mytheme
+
+```
+
+5. Targeting by tapiR1
+
+Plot mfe of all predicted tapiR1 target sites (by RNAHybrid) vs observed fold change (+ indicate target sites that were tested in luciferase assay -> Extended Data Fig. 7), and depict the fold changes of genes with and without predicted target site.
+
+```{r embryos_targeting}
+
+#add RNAHybrid output to RNASeq data
+resultsDEseqEmbryos <- resultsDEseqEmbryos %>% 
+        left_join(RNAHybridOutput, 
+                  by = c("geneID"="X2"))
+
+listResultsMFE=list(noTS = resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe == 0],
+                TS_all = resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe != 0],
+                TS_22 = resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe <= -22],
+                TS_26 = resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe <= -26],
+                TS_30 = resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe <= -30])
+                                                                                                                             
+cdf_RNAHyb= listResultsMFE  %>% 
+                lapply(.,'length<-', max(lengths(.))) %>%                    
+                as_data_frame() %>% 
+                gather(targetsite, log2FoldChange, noTS:TS_30) %>%
+                mutate(targetsite = factor(targetsite, levels = c("noTS", "TS_all", "TS_22", "TS_26", "TS_30")))
+
+
+ggplot(cdf_RNAHyb, aes(log2FoldChange, color =targetsite)) + 
+                stat_ecdf(size = 1) + 
+                scale_x_continuous(limits = c(-3,3)) +
+                scale_color_manual(values = c("#A50026", "#F46D43", "#FEE090", "#74ADD1", "#313695")) +
+                mytheme
+
+#statistically testing if distributions differ significantly
+ks.test(resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe == 0],
+        resultsDEseqEmbryos$log2FoldChange[resultsDEseqEmbryos$mfe != 0],
+        alternative = "greater" )
+
+```
+
+```{r embryos_targeting2, fig.width= 4 }
+
+ggplot() +
+         geom_point(data = resultsDEseqEmbryos[resultsDEseqEmbryos$mfe < 0,], 
+                    aes(x = log2FoldChange, y = mfe), 
+                    alpha = 0.25) +
+         geom_point(data = resultsDEseqEmbryos[resultsDEseqEmbryos$geneID %in% lucassay_negative, ], 
+                    aes(x = log2FoldChange, y = mfe), 
+                    color = "#D73027", 
+                    size = 2) +
+         geom_point(data = resultsDEseqEmbryos[resultsDEseqEmbryos$geneID %in% lucassay_positive, ], 
+                    aes(x = log2FoldChange, y = mfe), 
+                    color = "#313695", 
+                    size = 2) +
+         xlim(-6,10.5) +
+         mytheme
+  
+```
+
+```{r, embryos_targeting3, fig.width=2}
+
+ggplot(resultsDEseqEmbryos, 
+        aes(mfe == 0, log2FoldChange, fill= mfe == 0)) +
+        geom_violin(show.legend = F) +
+        scale_fill_manual(values = c("#313695", "#A50026")) +
+        ylim(-6,10.5) +
+        mytheme
+
+```
+
+6. GO term analysis
+
+Gene set enrichment for all genes (-> there was no enrichment)
+
+```{r}
+
+resultsCodingGenesEmbryos <- resultsDEseqEmbryos %>% 
+                filter(biotype != "lncRNA") %>%
+                dplyr::select(geneID, log2FoldChange, padj) %>% 
+                replace_na(list(padj = 1)) 
+
+geneListEmbryos <- resultsCodingGenesEmbryos$log2FoldChange
+names(geneListEmbryos) <- resultsCodingGenesEmbryos$geneID
+
+
+GOResultsEmbryos <- gseGO(geneList = geneListEmbryos, 
+               OrgDb = org.Aaegypti.eg.db,
+               ont = "ALL",
+               keyType = "GID",
+               pvalueCutoff = pvalueGO)
+
+head(GOResultsEmbryos)
+
+```
+
+7. Overlap with Aag2 dataset
+Venneuler diagram is based on the soluton from Tyler Rinker: https://gist.github.com/trinker/31edc08d0a4ec4c73935a23040c2f6cb
+
+```{r, overlap}
+
+ListForOverlap <- list( "Aag2" = resultsDEseqAag2$geneID[resultsDEseqAag2$biotype_sign != "not_significant"],
+                        "Embryos" = resultsDEseqEmbryos$geneID[resultsDEseqEmbryos$biotype_sign != "not_significant"] )
+
+
+signGenesAag2 <-  resultsDEseqAag2 %>% 
+                rowid_to_column () %>% 
+                filter(biotype_sign != "not_significant") %>% 
+                filter(log2FoldChange > 0) %>%  # only considering upregulated genes
+                dplyr::select(rowid, geneID)
+
+signGenesEmbryos <- resultsDEseqEmbryos %>% 
+                rowid_to_column %>% 
+                filter(biotype_sign != "not_significant") %>% 
+                filter(log2FoldChange > 0)
+
+overlap <- signGenesEmbryos %>% 
+                inner_join(signGenesAag2, by = "geneID")
+
+
+#make Euler diagram
+DEGenesOnlyInAag2 <- resultsDEseqAag2 %>% 
+                filter(padj <= valueDESeqAlpha & log2FoldChange > 0) %>% 
+                filter(!geneID %in% overlap$geneID)
+
+DEGenesOnlyInEmbryos <- resultsDEseqEmbryos %>% 
+                filter(padj <= valueDESeqAlpha & log2FoldChange > 0) %>% 
+                filter(!geneID %in% overlap$geneID)
+
+#For coding genes
+vennCodingGenes <- tibble(
+        Combination = c("A", "E", "A&E"),
+        NoGenes = c(nrow(DEGenesOnlyInAag2[DEGenesOnlyInAag2$biotype != "lncRNA", ]),
+             nrow(DEGenesOnlyInEmbryos[DEGenesOnlyInEmbryos$biotype != "lncRNA", ]),
+             nrow(overlap[overlap$biotype != "lncRNA", ]))) 
+
+
+vennCodingGenes <- vennCodingGenes %>% 
+        venneuler(combinations = .$Combination, 
+                  weights = .$NoGenes) 
+
+vennCodingGenes <- data.frame(vennCodingGenes$centers, 
+                   diameters = vennCodingGenes$diameters, 
+                   labels = vennCodingGenes$labels, 
+                   stringsAsFactors = FALSE) %>% 
+            mutate(r = diameters/2)
+
+#For lncRNA
+vennLncRNA <- tibble(
+        Combination = c("Al", "El", "Al&El"),
+        NoGenes= c(nrow(DEGenesOnlyInAag2[DEGenesOnlyInAag2$biotype == "lncRNA", ]),
+             nrow(DEGenesOnlyInEmbryos[DEGenesOnlyInEmbryos$biotype == "lncRNA", ]),
+             nrow(overlap[overlap$biotype == "lncRNA", ]))) 
+ 
+ 
+vennLncRNA <- vennLncRNA %>% 
+    venneuler(combinations = .$Combination, 
+              weights = .$NoGenes) 
+
+vennLncRNA <- data.frame(vennLncRNA$centers, 
+                         diameters = vennLncRNA$diameters, 
+                         labels = vennLncRNA$labels, 
+                         stringsAsFactors = FALSE) %>%
+           mutate(r = diameters/2)
+
+
+#Construct plot
+
+vennAll <- rbind(vennCodingGenes, vennLncRNA) %>%
+           add_column(Group = c(rep("Genes", 2), rep("lncRNA", 2)))
+
+
+
+ggplot() +
+            geom_circle(data = vennAll, 
+                        aes(x0 = x, y0 = y, r = r, fill = labels), 
+                        alpha = 0.75) +
+            coord_fixed() + 
+            theme_void() +
+            facet_wrap( ~Group) + 
+            scale_fill_manual(values = c("#D73027", "#D73027", "#4575B4","#4575B4"),
+                                breaks = c("A", "E"))
+            
+# Numbers for the plot:
+
+             nrow(DEGenesOnlyInAag2[DEGenesOnlyInAag2$biotype != "lncRNA", ])
+             nrow(DEGenesOnlyInEmbryos[DEGenesOnlyInEmbryos$biotype != "lncRNA", ])
+             nrow(overlap[overlap$biotype != "lncRNA", ])
+             nrow(DEGenesOnlyInAag2[DEGenesOnlyInAag2$biotype == "lncRNA", ])
+             nrow(DEGenesOnlyInEmbryos[DEGenesOnlyInEmbryos$biotype == "lncRNA", ])
+             nrow(overlap[overlap$biotype == "lncRNA", ])
+
+```
+
+### DE transposon analysis
+
+1. Load quantification files
+Datasets quantified with Salmon
+
+```{r}
+
+filePath <- dir(dirRawDataEmbryos, ".sf")
+filesTEsEmbryos <- file.path(dirRawDataEmbryos, filePath)
+
+SampleNames <- c("controlAO_1", "controlAO_2", "controlAO_3", "controlAO_4", "controlAO_5",
+                 "tapiR1AO_1", "tapiR1AO_2", "tapiR1AO_3", "tapiR1AO_4", "tapiR1AO_5")
+
+names(filesTEsEmbryos) <- paste0(SampleNames)
+
+quantFilesTEsEmbryos <- tximport(filesTEsEmbryos, 
+                            type = "salmon",  
+                            tx2gene = matrixTEs)
+
+```
+
+2. Create DESeq object
+
+```{r}
+
+ddsTEsEmbryos <- DESeqDataSetFromTximport(quantFilesTEsEmbryos, 
+                                          colData = sampleTableEmbryo, 
+                                          design = ~ condition)
+
+#filter low counts
+ddsTEsEmbryos <- ddsTEsEmbryos[rowSums(counts(ddsTEsEmbryos)) > 1, ] 
+
+```
+
+3. Statistical testing
+
+```{r}
+
+DEseqTEsEmbryos <- DESeq(ddsTEsEmbryos, 
+                         quiet = TRUE)
+
+resultsTEsEmbryos <-results(DEseqTEsEmbryos, 
+                          alpha = valueDESeqAlpha, 
+                          lfcThreshold = valueDEseqLfcThreshold)
+
+summary(resultsTEsEmbryos)
+
+
+resultsTEsEmbryos <- resultsTEsEmbryos %>%
+                as.data.frame() %>%
+                rownames_to_column(var = "TE_ID") %>%
+                as_tibble() %>%
+                arrange(desc(log2FoldChange)) %>%
+                left_join(TEs, by = c("TE_ID" = "TE_name")) %>%  
+                add_column(., Subclass_sign = ifelse(.$padj <= valueDESeqAlpha, .$Subclass, "not_significant")) %>%
+                replace_na(list(Subclass_sign = "not_significant"))
+                
+
+write_tsv(resultsTEsEmbryos[, c(1:7, 9:12)], "DE_transposons_Embryos.tsv")
+
+```
+
+4. Plotting expression of all TEs
+
+```{r, embryos_TEs_expression}
+
+countsTEsEmbryos <- counts(DEseqTEsEmbryos,
+                           normalized = TRUE,
+                           replaced = FALSE) %>% 
+                as.data.frame() %>% 
+                rownames_to_column() %>% 
+                as_tibble %>% 
+                group_by(rowname) %>% 
+                summarize(meanControl = mean(controlAO_1:controlAO_5), 
+                          meanTapiR = mean(tapiR1AO_1:tapiR1AO_5)) %>%
+                mutate(meanControl = meanControl + 1, 
+                       meanTapiR = meanTapiR + 1) %>%  #add pseudo-count of 1 in order to plot logarithmic
+                left_join(resultsTEsEmbryos[ , c("TE_ID", "Subclass_sign")], 
+                          by = c("rowname" = "TE_ID"))
+
+ggplot() +
+        geom_point(data = countsTEsEmbryos[countsTEsEmbryos$Subclass_sign == "not_significant", ], 
+                   aes(meanControl, meanTapiR, color=Subclass_sign)) +
+        geom_point(data = countsTEsEmbryos[countsTEsEmbryos$Subclass_sign == "LTR Retrotransposons", ], 
+                   aes(meanControl, meanTapiR, color=Subclass_sign)) +
+        geom_point(data = countsTEsEmbryos[countsTEsEmbryos$Subclass_sign == "Cut and paste DNA transposon", ], 
+                   aes(meanControl, meanTapiR, color=Subclass_sign)) +
+        geom_point(data = countsTEsEmbryos[countsTEsEmbryos$Subclass_sign == "Non-LTR Retrotransposons", ], 
+                   aes(meanControl, meanTapiR, color=Subclass_sign)) +
+        coord_fixed() +
+        scale_color_manual(values = c('#A50026',"#F46D43" , '#313695' ,'#CCCCCC')) +
+        myplot +
+        mytheme
+
+```
+
+
+### Expression of tapiR1 target genes during early embryonic development
+
+This analysis compared the expression patterns of tapiR1 target genes as found in the AO-injected embryo datasets above to that of non-target genes during early embryonic development, especially during maternal-zygotic transition. We considered all timepoints up to 12-16h for the analysis (the last timepoint being clearly post-MZT). Timecourse data is from Akbari et al, G3 (Bethesda), 2013 (DOI 10.1534/g3.113.006742).
+
+1. Load quantification files
+
+Datasets mapped and quantified with STAR
+
+```{r, message=FALSE}
+
+filePath <- dir(dirRawDataAkbari, "ReadsPerGene.out.tab")
+filesAkbari <-file.path(dirRawDataAkbari, filePath)
+
+
+#load metadata
+metadataAkbari <- read_csv(paste(dirRawDataAkbari, "/MetadataAkbari.csv", sep = ""))  %>% 
+                add_column(FileName = paste(.$Name, "ReadsPerGene.out.tab", sep = ""))
+
+
+                
+names(filesAkbari) <- metadataAkbari %>% 
+                arrange(Name) %>% 
+                pull(Age)
+
+
+countMatrixAkbari=read_delim(filesAkbari[1], 
+                             delim = "\t", 
+                             col_names = FALSE)  %>% 
+                        dplyr::select(gene = X1) %>%
+                        dplyr::slice(5:n())
+
+
+for (i in 1: length(filesAkbari)){
+        x <- read_delim(filesAkbari[i], 
+                        delim = "\t", 
+                        col_names = FALSE) %>%
+                dplyr::select(c(1,4)) %>%
+          dplyr::slice(5:n())
+  
+        colnames(x) <- c("gene", names(filesAkbari)[i])
+        
+        countMatrixAkbari <- left_join(countMatrixAkbari, x, by= "gene")
+}
+
+
+
+countMatrixAkbari <- countMatrixAkbari %>% 
+                na.omit %>% 
+                as.data.frame
+        
+        
+        
+
+rownames(countMatrixAkbari) <- countMatrixAkbari$gene
+
+countMatrixAkbari <- countMatrixAkbari %>%
+                dplyr::select(-gene) 
+
+colOrder <- metadataAkbari$Age #sorting columns in according to time
+
+countMatrixAkbari <- countMatrixAkbari[, colOrder]
+
+
+
+countMatrixEmbryos <- as.matrix(countMatrixAkbari[, 2:21])
+
+```
+
+2. Create DESeq object
+
+For embryos we will only construct DEseq object to get the normalzed counts, but not to do the statistical analysis.
+
+```{r, message=FALSE}
+
+sampleTableAkbari <- data.frame(time = metadataAkbari$Age)
+
+rownames(sampleTableAkbari) <- colnames(countMatrixAkbari)
+
+ddsAkbari <- DESeqDataSetFromMatrix(countData = countMatrixAkbari, 
+                                    colData = sampleTableAkbari, 
+                                    design = ~time)
+
+ddsAkbari <- estimateSizeFactors(ddsAkbari)
+sizeFactors(ddsAkbari)
+
+```
+
+3. Plot size of expression categories of tapiR1 target genes
+
+```{r, CamparisonExpression, message=FALSE}
+
+countsAkbari <- t(t(counts(ddsAkbari)) / sizeFactors(ddsAkbari)) %>% #normalize to library size
+                as_tibble(rownames = "gene") %>%
+                dplyr::select("gene", `0`, `2`, `4`, `8`, `12`) %>%
+                mutate(Means = { x = dplyr::select(., -gene)  
+                               rowMeans(x)}) %>% #filter low count genes
+                filter(Means > 10) %>% 
+                dplyr::select(-Means) %>%
+                mutate_at( vars(-gene), dplyr::funs(. + 1))  %>% #add pseudo count of 1
+                mutate_at( vars(-gene), dplyr::funs(log2(.))) %>% #log2 scale
+                gather(age, count, 2:6) %>% 
+                group_by(gene, age) %>%
+                summarise(Mean = mean(count)) %>% 
+                ungroup() %>% 
+                spread(age, Mean) %>%
+                dplyr::select("gene", `0`, `2`, `4`, `8`, `12`) %>%
+                #classification based on expression pattern
+                mutate(Maternal = ifelse(`0` < 1, "zygotic",
+                               ifelse(`0` -5 >= `12`, "maternal_degradation_strong", #decrease is more than 32-fold
+                               ifelse(`0` -2 >= `12` , "maternal_degradation_int", #decrease is more than 4-fold
+                               ifelse(`12` -5 >= `0`, "maternal_transcription_strong", #increase is more than 32-fold
+                               ifelse(`12` -2 >= `0`, "maternal_transcription_int", #increase is more than 32-fold
+                               ifelse(`0` -0.5 <= `12` & `0` + 0.5 >=  `12` , "maternal_stable",    #does not change more than 1.3-fold
+                               ifelse(`0` -2 < `12` & `0` -0.5 > `12` ,  "maternal_down", "maternal_up")))))))) #change is less than 4-fold
+
+#Add info on whether gene is target gene or not
+#Based on: differential expression in embryo dataset and
+#predicted target site with mfe <0 -24 kcal/mol and
+#was not tested negative in luciferase assay
+
+countsAkbari <- countsAkbari %>%
+                left_join(RNAHybridOutput, by = c("gene" = "X2")) %>%
+                mutate(targetgene = ifelse( .$gene %in% resultsDEseqEmbryos$geneID[resultsDEseqEmbryos$log2FoldChange >= 1 & resultsDEseqEmbryos$mfe <= -24], "target", "notarget")) %>%
+                mutate(targetgene = ifelse( .$gene %in% lucassay_negative, "notarget", targetgene))
+
+levelsExpression <- c("maternal_degradation_strong",
+                  "maternal_degradation_int",
+                  "maternal_down",
+                  "maternal_stable",
+                  "maternal_up", 
+                  "maternal_transcription_int",
+                  "maternal_transcription_strong",
+                  "zygotic")
+
+
+EnrichmentTapiR1TS <- countsAkbari %>% 
+                group_by(Maternal) %>% 
+                summarise(target = sum(targetgene == "target"), 
+                          all = n()) %>%         
+                replace(is.na(.), 0) %>%
+                mutate(target = as.numeric(target),
+                        all = as.numeric(all)) %>%
+                mutate(target = target/sum(target) *100,
+                       all = all/sum(all) *100) %>%
+                gather(TS, fraction, 2:3) %>%
+                mutate(Maternal = factor(Maternal, levels = levelsExpression))
+
+ggplot(EnrichmentTapiR1TS, aes(x = TS, y = fraction, fill = Maternal)) + 
+                geom_bar(stat = "identity") +
+                scale_fill_manual(values = c("#313695", "#74ADD1", "#ABD9E9", "gray85", "#FEE090", "#F46D43", "#A50026", "black")) +
+                mytheme
+
+
+#quality check:
+#similar result when taking random subset of non-target genes as comparison
+randSamp <- sample_n(countsAkbari[countsAkbari$targetgene == "notarget",], sum(countsAkbari$targetgene == "target")) %>%
+        group_by(Maternal) %>% 
+        summarise(notarget = n()) %>% 
+        mutate(fraction = notarget/sum(notarget) *100) %>%
+        add_column(TS = "notarget") %>%
+        dplyr::select(Maternal, TS, fraction) %>%
+        rbind(EnrichmentTapiR1TS) %>%
+        mutate(Maternal = factor(Maternal, levels = levelsExpression))
+
+ggplot(randSamp, aes(x = TS, y = fraction, fill = Maternal)) + 
+        geom_bar(stat = "identity") +
+        scale_fill_manual(values = c("#313695", "#74ADD1", "#ABD9E9", "gray85", "#FEE090", "#F46D43", "#A50026", "black")) +
+        mytheme
+        
+
+#quality check:
+#same result when considering the slope og the linear regression of the expression over time
+#instead of only considering he change between 0-2h and 12-14hh.
+# -> the more negative slope is, the stronger degradation of these transcripts is (maternal unstable) 
+regressionExpressionDevelopment <- countMatrixAkbari %>% 
+        rownames_to_column(var = "gene") %>%
+        as_tibble %>%
+        dplyr:: select(c(gene, `0`,`2`,`4`, `8`, `12`)) %>% 
+        gather(age, count, 2:ncol(.)) %>% 
+        mutate(age = as.numeric(age)) %>%
+        mutate(count = log2(count + 1)) %>%
+        group_by(gene) %>%
+        summarize(reg = {unname(coefficients( lm(count ~ age))[2])}) %>%
+        left_join(countsAkbari, by = "gene") %>%
+        dplyr:: select(gene, mfe, Maternal, reg, targetgene, `0`, `2`, `4`, `8`, `12`) %>%
+        drop_na()
+                                     
+ ggplot(regressionExpressionDevelopment, aes(x = targetgene, y = reg,  fill = targetgene)) + 
+         geom_violin(show.legend = F) +
+         mytheme
+ 
+ 
+ 
+cdfRegressionExpressionDevelopment <- list(notarget= regressionExpressionDevelopment$reg[regressionExpressionDevelopment$targetgene != "target"],
+                   Target= regressionExpressionDevelopment$reg[regressionExpressionDevelopment$targetgene== "target"])
+                                                                                                                              
+cdfRegressionExpressionDevelopment <- cdfRegressionExpressionDevelopment  %>% 
+                lapply(.,'length<-', max(lengths(.))) %>%                    
+                as_data_frame() %>% 
+                gather(targetsite, regressionExpressionDevelopment, notarget:Target) %>%
+                mutate(targetsite = factor(targetsite, levels = c("notarget", "Target")))
+ 
+ 
+ ggplot(cdfRegressionExpressionDevelopment, aes(regressionExpressionDevelopment, color = targetsite)) + 
+         stat_ecdf(size = 1) + 
+         scale_x_continuous(limits = c(-0.5,0.8)) +
+         scale_color_manual(values = c("#313695", "#A50026")) +
+         mytheme
+       
+```
+

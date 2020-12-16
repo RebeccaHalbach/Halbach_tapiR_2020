@@ -32,7 +32,7 @@ mkdir tmp
 
 
 #Path to file (change!)
-INFILE=$(ls $HOME/IPseq/20190926.BowtieMapping/RDVJ106.bam)
+INFILE=$(ls $HOME/IPseq/MappedFiles/RDVJ106.bam)
 
 #Annotation
 #From VectorBase: gene set AaegL5.1

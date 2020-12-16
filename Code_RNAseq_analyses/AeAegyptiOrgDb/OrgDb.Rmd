@@ -1,0 +1,194 @@
+---
+title: "Create OrgDB package for Ae. aegypti"
+author: "Rebecca"
+date: "04/05/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Goal
+
+This script downloads annotation data from BioMart (hosted by VectorBase) and constructs an orgDb object for easier use in downstream analysis (GO enrichment etc).
+It will include general information on genes as well as GO terms. For a more complete GO annotation, GO terms of homologous genes from Aedes albopictus, Culex quinquefasciatus, Anopheles gambiae and Drosophila melanogaster will be included as well.  
+The package should be installed once, and can then be loaded with `library(org.Aaegypti.eg.db)` in subsequent sessions. It can also be downloaded [here](https://www.dropbox.com/sh/82g0lkktz4z8pwy/AABnhUJlnOfI7k_A9bUnYz1Ya?dl=0).  
+
+#### Load libraries
+
+Requires the following packages:  
+
+* tidyverse 1.2.1
+* biomaRt 2.40.4
+* AnnotationForge 1.26.0  
+
+```{r}
+library(tidyverse)
+library(biomaRt)
+library(AnnotationForge)
+```
+
+
+#### Get annotation
+1. Use Biomart from VectorBase instead of Biomart from ENSEMBL
+```{r}
+mart <- listMarts(host="biomart.vectorbase.org")[1,1]   #get correct number of mart (is dependent on version at VectorBase and updated frequently)
+VectorBase <- useMart(host = "https://biomart.vectorbase.org", biomart = mart, port = 443)
+
+
+Aedes <- useDataset(VectorBase, dataset = "alvpagwg_eg_gene")
+Albopictus <- useDataset(VectorBase, dataset = "aalbopictus_eg_gene")
+Culex <- useDataset(VectorBase, dataset = "cquinquefasciatus_eg_gene")
+Agambiae <- useDataset(VectorBase, dataset = "agambiae_eg_gene")
+
+```
+
+2. Get annotation for Ae. aegypti
+```{r}
+options(RCurlOptions=list(followlocation=TRUE, postredir=2L))
+Aaegypti_genes_VB <- getBM(attributes = c("ensembl_gene_id",
+                                        "refseq_gene_name",
+                                        "chromosome_name",
+                                        "start_position",
+                                        "end_position", 
+                                        "band", 
+                                        "description",
+                                        "strand",
+                                        "go_id",
+                                        "name_1006",
+                                        "go_linkage_type"),
+                         mart = Aedes,
+                         uniqueRows = TRUE) %>% unique
+
+
+#add gene length
+Aaegypti_genes_VB <- Aaegypti_genes_VB %>%
+                        mutate(GENELENGTH= end_position - start_position)
+```
+
+3. Get homologs for Ae. aegypti genes, and extract GO terms for these homologs
+```{r}
+Aedes_Homologs <- getBM(attributes = c("ensembl_gene_id",
+                                    "aalbopictus_eg_homolog_ensembl_gene",
+                                    "agambiae_eg_homolog_ensembl_gene",
+                                    "cquinquefasciatus_eg_homolog_ensembl_gene",
+                                    "dmelanogaster_eg_homolog_ensembl_gene"),
+                     mart=Aedes,
+                     uniqueRows = TRUE)
+
+
+
+#get GO terms from other insects
+
+attributes <- c("ensembl_gene_id",
+                "go_id",
+                "name_1006",
+                "go_linkage_type")
+
+Albopictus_GO <- getBM( attributes = attributes,
+                     mart=Albopictus,
+                     uniqueRows = TRUE)  %>% 
+                    .[.[,2]!= "",] %>%         #remove all genes without GO annotation
+                     dplyr::rename(aalbopictus_eg_homolog_ensembl_gene=ensembl_gene_id) %>% 
+                     mutate(go_linkage_type= "IEA") %>%      #change evidence code to IEA, because for Aedes
+                                                             #this will be no manual annotation any more
+                    left_join(Aedes_Homologs[,c(1,2)]) %>% #join with homolog names in Aedes
+                    na.omit() %>% 
+                    unique()
+
+Anopheles_GO <- getBM( attributes = attributes,
+                     mart=Agambiae,
+                     uniqueRows = TRUE)  %>% 
+                     .[.[,2]!= "",] %>%         
+                     dplyr::rename(agambiae_eg_homolog_ensembl_gene=ensembl_gene_id) %>% 
+                     mutate(go_linkage_type= "IEA") %>%
+                     left_join(Aedes_Homologs[,c(1,3)]) %>% 
+                     na.omit() %>% 
+                     unique()
+
+Culex_GO <- getBM( attributes = attributes,
+                     mart=Culex,
+                     uniqueRows = TRUE) %>% 
+                     .[.[,2]!= "",] %>%         
+                     dplyr::rename(cquinquefasciatus_eg_homolog_ensembl_gene=ensembl_gene_id) %>% 
+                     mutate(go_linkage_type= "IEA") %>%   
+                     left_join(Aedes_Homologs[,c(1,4)]) %>% 
+                     na.omit() %>% 
+                     unique()
+
+
+#For Drosophila we can use the regular Mart interface from ENSEMBL
+Drosophila_GO <- getBM( attributes = attributes,
+                      mart= useMart("ENSEMBL_MART_ENSEMBL", dataset = "dmelanogaster_gene_ensembl")) %>% 
+                      .[.[,2]!= "",] %>%  
+                      dplyr::rename(dmelanogaster_eg_homolog_ensembl_gene=ensembl_gene_id) %>% 
+                      mutate(go_linkage_type= "IEA") %>%     
+                      left_join(Aedes_Homologs[,c(1,5)]) %>% 
+                      na.omit() %>% 
+                      unique()
+
+
+#Put together
+
+Aedes_GO <- Aaegypti_genes_VB %>% dplyr::select(ensembl_gene_id, go_id, name_1006, go_linkage_type) %>%
+                      mutate(go_id= replace(go_id, go_id=="", NA)) %>%
+                      rbind(., within(Drosophila_GO, rm("dmelanogaster_eg_homolog_ensembl_gene")))  %>% 
+                      unique() %>%
+                      rbind(., within(Culex_GO, rm("cquinquefasciatus_eg_homolog_ensembl_gene"))) %>%
+                      unique() %>%
+                      rbind(., within(Albopictus_GO, rm("aalbopictus_eg_homolog_ensembl_gene"))) %>%
+                      unique() %>%
+                      rbind(., within(Anopheles_GO, rm("agambiae_eg_homolog_ensembl_gene"))) %>% 
+                      unique() %>% 
+                      arrange(ensembl_gene_id) %>% 
+                      drop_na(go_id)
+```
+
+4. Create OrgDb for Ae. aegypti
+```{r}
+
+AaeRef <- Aaegypti_genes_VB %>% 
+                dplyr::select(-go_id, -name_1006, -go_linkage_type) %>% 
+                unique() %>% 
+                dplyr::rename(GID= ensembl_gene_id, REFSEQ= refseq_gene_name, 
+                              GENENAME= description,
+                              CHROMOSOME= chromosome_name, 
+                              START= start_position, 
+                              END= end_position, 
+                              BAND= band, 
+                              STRAND= strand) %>%
+               arrange(GID)
+
+
+Aae_GO <- Aedes_GO %>% 
+                dplyr::select(ensembl_gene_id, go_id, go_linkage_type) %>% 
+                unique %>%
+                dplyr::rename(GID = ensembl_gene_id, 
+                              GO = go_id, 
+                              EVIDENCE = go_linkage_type) %>%
+                replace_na(list(GO="", EVIDENCE=""))
+
+
+
+#IMPORTANT: outputDir must be created beforehand!
+AnnotationForge::makeOrgPackage(gene_info=AaeRef, 
+                                go=Aae_GO,
+                                version="0.1",
+                                maintainer="Rebecca Halbach <rebecca.halbach@radboudumc.nl>",
+                                author="Rebecca Halbach <rebecca.halbach@radboudumc.nl>",
+                                outputDir = "./AnnotationAedes",
+                                tax_id="7159",
+                                genus="Aedes",
+                                species="aegypti",
+                                goTable="go")
+
+#install.packages("./AnnotationAedes/org.Aaegypti.eg.db", repos=NULL) 
+
+
+#library(org.Aaegypti.eg.db)
+
+
+```
+
+

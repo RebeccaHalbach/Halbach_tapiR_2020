@@ -38,8 +38,8 @@ mkdir tmp
 
 ##Files
 #change path!
-InputSample=$HOME/IPseq/20190926.BowtieMapping/RDVJ106.bed
-IPSamples=$(ls $HOME/IPseq/20190926.BowtieMapping/*10[1-5].bed)
+InputSample=$HOME/IPseq/MappedFiles/RDVJ106.bed
+IPSamples=$(ls $HOME/IPseq/MappedFiles/*10[1-5].bed)
 
 
 ########################################

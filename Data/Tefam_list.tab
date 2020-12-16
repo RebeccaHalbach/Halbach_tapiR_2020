@@ -1,0 +1,1092 @@
+species_name	element_id	element_name	class_name	subclass_name	family_name	subfamily	synonyms	consensus	partial_full	composite	copy_number
+Aedes aegypti	TF000042	Pao_Bel_Ele1	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	11
+Aedes aegypti	TF000092	Pao_Bel_Ele10	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	5
+Aedes aegypti	TF000522	Pao_Bel_Ele100	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	17
+Aedes aegypti	TF000272	Pao_Bel_Ele101	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	17
+Aedes aegypti	TF000609	Pao_Bel_Ele102	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	24
+Aedes aegypti	TF000273	Pao_Bel_Ele103	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	20
+Aedes aegypti	TF000608	Pao_Bel_Ele104	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	32
+Aedes aegypti	TF000274	Pao_Bel_Ele105	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	29
+Aedes aegypti	TF000582	Pao_Bel_Ele106	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	26
+Aedes aegypti	TF000275	Pao_Bel_Ele107	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	15
+Aedes aegypti	TF000607	Pao_Bel_Ele108	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	19
+Aedes aegypti	TF000276	Pao_Bel_Ele109	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	17
+Aedes aegypti	TF000228	Pao_Bel_Ele11	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	14
+Aedes aegypti	TF000602	Pao_Bel_Ele110	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	No	8
+Aedes aegypti	TF000277	Pao_Bel_Ele111	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	No	7
+Aedes aegypti	TF000601	Pao_Bel_Ele112	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	31
+Aedes aegypti	TF000765	Pao_Bel_Ele113	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	No	13
+Aedes aegypti	TF000606	Pao_Bel_Ele114	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	15
+Aedes aegypti	TF000279	Pao_Bel_Ele115	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	No	11
+Aedes aegypti	TF000599	Pao_Bel_Ele116	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	23
+Aedes aegypti	TF000280	Pao_Bel_Ele117	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	13
+Aedes aegypti	TF000598	Pao_Bel_Ele118	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	20
+Aedes aegypti	TF000281	Pao_Bel_Ele119	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	18
+Aedes aegypti	TF000093	Pao_Bel_Ele12	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	16
+Aedes aegypti	TF000600	Pao_Bel_Ele120	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	24
+Aedes aegypti	TF000282	Pao_Bel_Ele121	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	No	6
+Aedes aegypti	TF000594	Pao_Bel_Ele122	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	41
+Aedes aegypti	TF000283	Pao_Bel_Ele123	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	7
+Aedes aegypti	TF000595	Pao_Bel_Ele124	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	23
+Aedes aegypti	TF000284	Pao_Bel_Ele125	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	5
+Aedes aegypti	TF000597	Pao_Bel_Ele126	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	26
+Aedes aegypti	TF000285	Pao_Bel_Ele127	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	17
+Aedes aegypti	TF000596	Pao_Bel_Ele128	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF000286	Pao_Bel_Ele129	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000229	Pao_Bel_Ele13	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	7
+Aedes aegypti	TF000589	Pao_Bel_Ele130	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	31
+Aedes aegypti	TF000287	Pao_Bel_Ele131	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	13
+Aedes aegypti	TF000603	Pao_Bel_Ele132	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	53
+Aedes aegypti	TF000288	Pao_Bel_Ele133	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000591	Pao_Bel_Ele134	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	18
+Aedes aegypti	TF000289	Pao_Bel_Ele135	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	6
+Aedes aegypti	TF000590	Pao_Bel_Ele136	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000290	Pao_Bel_Ele137	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000592	Pao_Bel_Ele138	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000291	pao_Bel_Ele139	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF000408	Pao_Bel_Ele14	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	24
+Aedes aegypti	TF000593	Pao_Bel_Ele140	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF000292	Pao_Bel_Ele141	Class I	LTR Retrotransposons	Pao_Bel		Representative	Partial	Yes	19
+Aedes aegypti	TF000588	Pao_Bel_Ele142	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	34
+Aedes aegypti	TF000293	Pao_Bel_Ele143	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000587	Pao_Bel_Ele144	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	27
+Aedes aegypti	TF000294	Pao_Bel_Ele145	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000585	Pao_Bel_Ele146	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	26
+Aedes aegypti	TF000295	Pao_Bel_Ele147	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	16
+Aedes aegypti	TF000583	Pao_Bel_Ele148	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	15
+Aedes aegypti	TF000296	Pao_Bel_Ele149	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	28
+Aedes aegypti	TF000230	Pao_Bel_Ele15	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	27
+Aedes aegypti	TF000584	Pao_Bel_Ele150	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	39
+Aedes aegypti	TF000297	Pao_Bel_Ele151	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	33
+Aedes aegypti	TF000586	Pao_Bel_Ele152	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	43
+Aedes aegypti	TF000298	Pao_Bel_Ele153	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	46
+Aedes aegypti	TF000604	Pao_Bel_Ele154	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	13
+Aedes aegypti	TF000300	Pao_Bel_Ele155	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	25
+Aedes aegypti	TF000605	Pao_Bel_Ele156	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000301	Pao_Bel_Ele157	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	35
+Aedes aegypti	TF000611	Pao_Bel_Ele158	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000302	Pao_Bel_Ele159	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	51
+Aedes aegypti	TF000131	Pao_Bel_Ele16	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	6
+Aedes aegypti	TF000613	Pao_Bel_Ele160	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	30
+Aedes aegypti	TF000303	Pao_Bel_Ele161	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	44
+Aedes aegypti	TF000612	Pao_Bel_Ele162	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	8
+Aedes aegypti	TF000304	Pao_Bel_Ele163	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF001171	Pao_Bel_Ele164	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	38
+Aedes aegypti	TF000305	Pao_Bel_Ele165	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF001172	Pao_Bel_Ele166	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	11
+Aedes aegypti	TF000306	Pao_Bel_Ele167	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	24
+Aedes aegypti	TF001173	Pao_Bel_Ele168	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	53
+Aedes aegypti	TF000307	Pao_Bel_Ele169	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	34
+Aedes aegypti	TF000231	Pao_Bel_Ele17	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	15
+Aedes aegypti	TF001174	Pao_Bel_Ele170	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	47
+Aedes aegypti	TF000308	Pao_Bel_Ele171	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF001175	Pao_Bel_Ele172	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	11
+Aedes aegypti	TF000309	Pao_Bel_ele173	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	29
+Aedes aegypti	TF001176	Pao_Bel_Ele174	Class I	LTR Retrotransposons	Pao_Bel		Representative	Partial	Yes	41
+Aedes aegypti	TF000310	Pao_Bel_Ele175	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	16
+Aedes aegypti	TF001177	Pao_Bel_Ele176	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	10
+Aedes aegypti	TF000311	Pao_Bel_Ele177	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	9
+Aedes aegypti	TF001178	Pao_Bel_Ele178	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000312	Pao_Bel_Ele179	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000132	Pao_Bel_Ele18	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	23
+Aedes aegypti	TF001179	Pao_Bel_Ele180	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	9
+Aedes aegypti	TF000313	Pao_Bel_Ele181	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF001180	Pao_Bel_Ele182	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	37
+Aedes aegypti	TF000314	Pao_Bel_Ele183	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF001181	Pao_Bel_Ele184	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000315	Pao_Bel_Ele185	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	
+Aedes aegypti	TF001182	Pao_Bel_Ele186	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	13
+Aedes aegypti	TF000328	Pao_Bel_Ele187	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF001183	Pao_Bel_Ele188	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	33
+Aedes aegypti	TF000351	Pao_Bel_Ele189	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	2
+Aedes aegypti	TF000232	Pao_Bel_Ele19	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF001184	Pao_Bel_Ele190	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	29
+Aedes aegypti	TF000352	Pao_Bel_Ele191	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF001185	Pao_Bel_Ele192	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	5
+Aedes aegypti	TF000353	Pao_Bel_Ele193	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000780	Pao_Bel_Ele194	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	
+Aedes aegypti	TF000438	Pao_Bel_Ele195	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000789	Pao_Bel_Ele196	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000493	Pao_Bel_Ele197	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000802	Pao_Bel_Ele198	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000492	Pao_Bel_Ele199	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000088	Pao_Bel_Ele2	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	16
+Aedes aegypti	TF000133	Pao_Bel_Ele20	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	27
+Aedes aegypti	TF000801	Pao_Bel_Ele200	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000494	Pao_Bel_Ele201	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000768	Pao_Bel_Ele202	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000495	Pao_Bel_Ele203	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000800	Pao_Bel_Ele204	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000496	Pao_Bel_Ele205	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000798	Pao_Bel_Ele208	Class I	LTR Retrotransposons	Pao_Bel		Representative	Partial	Yes	
+Aedes aegypti	TF000498	Pao_Bel_Ele209	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000233	Pao_Bel_Ele21	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF000797	Pao_Bel_Ele210	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000499	Pao_Bel_Ele211	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000796	Pao_Bel_Ele212	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000500	Pao_Bel_Ele213	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000794	Pao_Bel_Ele214	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000501	Pao_Bel_Ele215	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000510	Pao_Bel_Ele216	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000502	Pao_Bel_Ele217	Class I	LTR Retrotransposons	Pao_Bel		Representative	Partial	Yes	
+Aedes aegypti	TF000792	Pao_Bel_Ele218	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000503	Pao_Bel_Ele219	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000299	Pao_Bel_Ele22	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	9
+Aedes aegypti	TF000788	Pao_Bel_Ele220	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	
+Aedes aegypti	TF000504	Pao_Bel_Ele221	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000787	Pao_Bel_Ele222	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Partial	Yes	
+Aedes aegypti	TF000505	Pao_Bel_Ele223	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000785	Pao_Bel_Ele224	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000506	Pao_Bel_Ele225	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000777	Pao_Bel_Ele226	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000507	Pao_Bel_Ele227	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000772	Pao_Bel_Ele228	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	
+Aedes aegypti	TF000508	Pao_Bel_Ele229	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000278	Pao_Bel_Ele23	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	31
+Aedes aegypti	TF000770	Pao_Bel_Ele230	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000509	Pao_Bel_Ele231	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000326	Pao_Bel_Ele24	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000234	Pao_Bel_Ele25	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	13
+Aedes aegypti	TF000327	Pao_Bel_Ele26	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF000235	Pao_Bel_Ele27	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	25
+Aedes aegypti	TF000329	Pao_Bel_Ele28	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	6
+Aedes aegypti	TF000236	Pao_Bel_Ele29	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	26
+Aedes aegypti	TF000224	Pao_Bel_Ele3	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	10
+Aedes aegypti	TF000330	Pao_Bel_Ele30	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	16
+Aedes aegypti	TF000237	Pao_Bel_Ele31	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000331	Pao_Bel_Ele32	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	22
+Aedes aegypti	TF000238	Pao_Bel_Ele33	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	15
+Aedes aegypti	TF000332	Pao_Bel_Ele34	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	79
+Aedes aegypti	TF000239	Pao_Bel_Ele35	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	7
+Aedes aegypti	TF000333	Pao_Bel_Ele36	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	24
+Aedes aegypti	TF000240	Pao_Bel_Ele37	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	8
+Aedes aegypti	TF000334	Pao_Bel_Ele38	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000241	Pao_Bel_Ele39	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	14
+Aedes aegypti	TF000089	Pao_Bel_Ele4	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	54
+Aedes aegypti	TF000393	Pao_Bel_Ele40	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	20
+Aedes aegypti	TF000242	Pao_Bel_Ele41	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	16
+Aedes aegypti	TF000394	Pao_Bel_Ele42	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	18
+Aedes aegypti	TF000243	Pao_Bel_Ele43	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000395	Pao_Bel_Ele44	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF000244	Pao_Bel_Ele45	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000396	Pao_Bel_Ele46	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	27
+Aedes aegypti	TF000245	Pao_Bel_Ele47	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	21
+Aedes aegypti	TF000397	Pao_Bel_Ele48	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	17
+Aedes aegypti	TF000246	Pao_Bel_Ele49	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	15
+Aedes aegypti	TF000225	Pao_Bel_Ele5	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000398	Pao_Bel_Ele50	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000247	Pao_Bel_Ele51	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	9
+Aedes aegypti	TF000399	Pao_Bel_Ele52	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	97
+Aedes aegypti	TF000248	Pao_Bel_Ele53	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	23
+Aedes aegypti	TF000400	Pao_Bel_Ele54	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF000249	Pao_Bel_Ele55	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	23
+Aedes aegypti	TF000406	Pao_Bel_Ele56	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	18
+Aedes aegypti	TF000401	Pao_Bel_Ele56x	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	
+Aedes aegypti	TF000250	Pao_Bel_Ele57	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	4
+Aedes aegypti	TF000402	Pao_Bel_Ele58	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	9
+Aedes aegypti	TF000251	Pao_Bel_Ele59	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000090	Pao_Bel_Ele6	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	25
+Aedes aegypti	TF000403	Pao_Bel_Ele60	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	32
+Aedes aegypti	TF000252	Pao_Bel_Ele61	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	16
+Aedes aegypti	TF000404	Pao_Bel_Ele62	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	47
+Aedes aegypti	TF000253	Pao_Bel_Ele63	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	19
+Aedes aegypti	TF000405	Pao_Bel_Ele64	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	28
+Aedes aegypti	TF000254	Pao_Bel_Ele65	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000407	Pao_Bel_Ele66	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	13
+Aedes aegypti	TF000255	Pao_Bel_Ele67	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	15
+Aedes aegypti	TF000409	Pao_Bel_Ele68	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	29
+Aedes aegypti	TF000256	Pao_Bel_Ele69	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	10
+Aedes aegypti	TF000226	Pao_Bel_Ele7	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	6
+Aedes aegypti	TF000410	Pao_Bel_Ele70	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000257	Pao_Bel_Ele71	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000411	Pao_Bel_Ele72	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	9
+Aedes aegypti	TF000258	Pao_Bel_Ele73	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	15
+Aedes aegypti	TF000457	Pao_Bel_Ele74	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	5
+Aedes aegypti	TF000259	Pao_Bel_Ele75	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	19
+Aedes aegypti	TF000458	Pao_Bel_Ele76	Class I	LTR Retrotransposons	Pao_Bel		Reconstructed	Full	Yes	
+Aedes aegypti	TF000260	Pao_Bel_Ele77	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000459	Pao_Bel_Ele78	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000261	Pao_Bel_Ele79	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	19
+Aedes aegypti	TF000091	Pao_Bel_Ele8	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	29
+Aedes aegypti	TF000460	Pao_Bel_Ele80	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000262	Pao_Bel_Ele81	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000461	Pao_Bel_Ele82	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	6
+Aedes aegypti	TF000263	Pao_Bel_Ele83	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	24
+Aedes aegypti	TF000514	Pao_Bel_Ele84	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	5
+Aedes aegypti	TF000264	Pao_Bel_Ele85	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	23
+Aedes aegypti	TF000515	Pao_Bel_Ele86	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	47
+Aedes aegypti	TF000265	Pao_Bel_Ele87	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	26
+Aedes aegypti	TF000516	Pao_Bel_Ele88	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000266	Pao_Bel_Ele89	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000227	Pao_Bel_Ele9	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000517	Pao_Bel_Ele90	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	29
+Aedes aegypti	TF000267	Pao_Bel_Ele91	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000518	Pao_Bel_Ele92	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	39
+Aedes aegypti	TF000268	Pao_Bel_Ele93	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	32
+Aedes aegypti	TF000519	Pao_Bel_Ele94	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	25
+Aedes aegypti	TF000269	Pao_Bel_Ele95	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	12
+Aedes aegypti	TF000520	Pao_Bel_Ele96	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	11
+Aedes aegypti	TF000270	Pao_Bel_Ele97	Class I	LTR Retrotransposons	Pao_Bel		Consensus	Full	Yes	10
+Aedes aegypti	TF000521	Pao_Bel_Ele98	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	8
+Aedes aegypti	TF000271	Pao_Bel_Ele99	Class I	LTR Retrotransposons	Pao_Bel		Representative	Full	Yes	14
+Aedes aegypti	TF000130	Ty1_copia_Ele1	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	4
+Aedes aegypti	TF000622	Ty1_copia_Ele10	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	4
+Aedes aegypti	TF001063	Ty1_copia_Ele100	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001053	Ty1_copia_Ele101	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001054	Ty1_copia_Ele102	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001112	Ty1_copia_Ele103	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001131	Ty1_copia_Ele104	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	16
+Aedes aegypti	TF001050	Ty1_copia_Ele105	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	11
+Aedes aegypti	TF001122	Ty1_copia_Ele106	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF001153	Ty1_copia_Ele107	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001120	Ty1_copia_Ele108	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001144	Ty1_copia_Ele109	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000623	Ty1_copia_Ele11	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF001029	Ty1_copia_Ele110	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001132	Ty1_copia_Ele111	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	12
+Aedes aegypti	TF001080	Ty1_copia_Ele112	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	13
+Aedes aegypti	TF001133	Ty1_copia_Ele113	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001083	Ty1_copia_Ele114	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001125	Ty1_copia_Ele115	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001055	Ty1_copia_Ele116	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001084	Ty1_copia_Ele117	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001056	Ty1_copia_Ele118	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001142	Ty1_copia_Ele119	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF000624	Ty1_copia_Ele12	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	4
+Aedes aegypti	TF001141	Ty1_copia_Ele120	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF000991	Ty1_copia_Ele121	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001145	Ty1_copia_Ele122	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001148	Ty1_copia_Ele123	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001115	Ty1_copia_Ele124	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001149	Ty1_copia_Ele125	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	13
+Aedes aegypti	TF001085	Ty1_copia_Ele126	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001057	Ty1_copia_Ele127	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001081	Ty1_copia_Ele128	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001134	Ty1_copia_Ele129	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF000625	Ty1_copia_Ele13	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF001130	Ty1_copia_Ele130	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001147	Ty1_copia_Ele131	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000992	Ty1_copia_Ele132	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	11
+Aedes aegypti	TF001058	Ty1_copia_Ele133	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001116	Ty1_copia_Ele134	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001121	Ty1_copia_Ele135	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001124	Ty1_copia_Ele136	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001150	Ty1_copia_Ele137	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001092	Ty1_copia_Ele138	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001139	Ty1_copia_Ele139	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF000626	Ty1_copia_Ele14	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF001075	Ty1_copia_Ele140	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001064	Ty1_copia_Ele141	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF000986	Ty1_copia_Ele142	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF000996	Ty1_copia_Ele143	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001152	Ty1_copia_Ele144	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF001082	Ty1_copia_Ele145	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001070	Ty1_copia_Ele146	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001059	Ty1_copia_Ele147	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001041	Ty1_copia_Ele148	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001034	Ty1_copia_Ele149	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF000627	Ty1_copia_Ele15	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	12
+Aedes aegypti	TF001000	Ty1_copia_Ele150	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF000993	Ty1_copia_Ele151	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001001	Ty1_copia_Ele152	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF000997	Ty1_copia_Ele153	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF000989	Ty1_copia_Ele154	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001004	Ty1_copia_Ele155	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001155	Ty1_copia_Ele156	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001042	Ty1_copia_Ele157	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001040	Ty1_copia_Ele158	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001002	Ty1_copia_Ele159	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF000628	Ty1_copia_Ele16	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000999	Ty1_copia_Ele160	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	13
+Aedes aegypti	TF001046	Ty1_copia_Ele161	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000990	Ty1_copia_Ele162	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001156	Ty1_copia_Ele163	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	12
+Aedes aegypti	TF000987	Ty1_copia_Ele164	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001003	Ty1_copia_Ele165	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001045	Ty1_copia_Ele166	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF000998	Ty1_copia_Ele167	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF000994	Ty1_copia_Ele168	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001038	Ty1_copia_Ele169	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000629	Ty1_copia_Ele17	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF001030	Ty1_copia_Ele170	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	9
+Aedes aegypti	TF001033	Ty1_copia_Ele171	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000995	Ty1_copia_Ele172	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF000985	Ty1_copia_Ele173	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001037	Ty1_copia_Ele174	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001032	Ty1_copia_Ele175	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001157	Ty1_copia_Ele176	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001031	Ty1_copia_Ele177	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001044	Ty1_copia_Ele178	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000988	Ty1_copia_Ele179	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF000630	Ty1_copia_Ele18	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	1
+Aedes aegypti	TF001043	Ty1_copia_Ele180	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001076	Ty1_copia_Ele181	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	24
+Aedes aegypti	TF001060	Ty1_copia_Ele182	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001065	Ty1_copia_Ele183	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	15
+Aedes aegypti	TF001135	Ty1_copia_Ele184	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001051	Ty1_copia_Ele185	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001113	Ty1_copia_Ele186	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001087	Ty1_copia_Ele187	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001077	Ty1_copia_Ele188	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001035	Ty1_copia_Ele189	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF000631	Ty1_copia_Ele19	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF001066	Ty1_copia_Ele190	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001061	Ty1_copia_Ele191	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF001067	Ty1_copia_Ele192	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001052	Ty1_copia_Ele193	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	8
+Aedes aegypti	TF001071	Ty1_copia_Ele194	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001078	Ty1_copia_Ele195	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001074	Ty1_copia_Ele196	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001089	Ty1_copia_Ele197	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	14
+Aedes aegypti	TF001126	Ty1_copia_Ele198	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001158	Ty1_copia_Ele199	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF000614	Ty1_copia_Ele2	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	15
+Aedes aegypti	TF000632	Ty1_copia_Ele20	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	84
+Aedes aegypti	TF001039	Ty1_copia_Ele200	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001117	Ty1_copia_Ele201	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001136	Ty1_copia_Ele202	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001068	Ty1_copia_Ele203	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001118	Ty1_copia_Ele204	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001086	Ty1_copia_Ele205	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001127	Ty1_copia_Ele206	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	5
+Aedes aegypti	TF001143	Ty1_copia_Ele207	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	9
+Aedes aegypti	TF001079	Ty1_copia_Ele208	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001088	Ty1_copia_Ele209	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF000633	Ty1_copia_Ele21	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF001048	Ty1_copia_Ele210	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001159	Ty1_copia_Ele211	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001140	Ty1_copia_Ele212	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001151	Ty1_copia_Ele213	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001072	Ty1_copia_Ele214	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001049	Ty1_copia_Ele215	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	12
+Aedes aegypti	TF001114	Ty1_copia_Ele216	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001138	Ty1_copia_Ele217	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	10
+Aedes aegypti	TF001090	Ty1_copia_Ele218	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001128	Ty1_copia_Ele219	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF000634	Ty1_copia_Ele22	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF001091	Ty1_copia_Ele220	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001129	Ty1_copia_Ele221	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001047	Ty1_copia_Ele222	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	22
+Aedes aegypti	TF001154	Ty1_copia_Ele223	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001069	Ty1_copia_Ele224	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF001119	Ty1_copia_Ele225	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	6
+Aedes aegypti	TF001073	Ty1_copia_Ele226	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF001146	Ty1_copia_Ele227	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001062	Ty1_copia_Ele228	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001160	Ty1_copia_Ele229	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000635	Ty1_copia_Ele23	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	1
+Aedes aegypti	TF001123	Ty1_copia_Ele230	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF001137	Ty1_copia_Ele231	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF001036	Ty1_copia_Ele232	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF001161	Ty1_copia_Ele233	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	
+Aedes aegypti	TF000636	Ty1_copia_Ele24	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	16
+Aedes aegypti	TF000637	Ty1_copia_Ele25	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	11
+Aedes aegypti	TF000638	Ty1_copia_Ele26	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	11
+Aedes aegypti	TF000639	Ty1_copia_Ele27	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	25
+Aedes aegypti	TF000640	Ty1_copia_Ele28	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	22
+Aedes aegypti	TF000641	Ty1_copia_Ele29	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	11
+Aedes aegypti	TF000615	Ty1_copia_Ele3	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	8
+Aedes aegypti	TF000642	Ty1_copia_Ele30	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	4
+Aedes aegypti	TF000651	Ty1_copia_Ele31	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000653	Ty1_copia_Ele32	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000655	Ty1_copia_Ele33	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	1
+Aedes aegypti	TF000656	Ty1_copia_Ele34	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	10
+Aedes aegypti	TF000657	Ty1_copia_Ele35	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000658	Ty1_copia_Ele36	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000659	Ty1_copia_Ele37	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	13
+Aedes aegypti	TF000660	Ty1_copia_Ele38	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	11
+Aedes aegypti	TF000661	Ty1_copia_Ele39	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	21
+Aedes aegypti	TF000616	Ty1_copia_Ele4	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000662	Ty1_copia_Ele40	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000663	Ty1_copia_Ele41	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000666	Ty1_copia_Ele42	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000667	Ty1_copia_Ele43	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000668	Ty1_copia_Ele44	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	8
+Aedes aegypti	TF000669	Ty1_copia_Ele45	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	8
+Aedes aegypti	TF000670	Ty1_copia_Ele46	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	10
+Aedes aegypti	TF000671	Ty1_copia_Ele47	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000673	Ty1_copia_Ele48	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000675	Ty1_copia_Ele49	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000617	Ty1_copia_Ele5	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000678	Ty1_copia_Ele50	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000682	Ty1_copia_Ele51	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000684	Ty1_copia_Ele52	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000686	Ty1_copia_Ele53	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000688	Ty1_copia_Ele54	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000690	Ty1_copia_Ele55	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	11
+Aedes aegypti	TF000691	Ty1_copia_Ele56	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000693	Ty1_copia_Ele57	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000695	Ty1_copia_Ele58	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000697	Ty1_copia_Ele59	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000618	Ty1_copia_Ele6	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	37
+Aedes aegypti	TF000701	Ty1_copia_Ele60	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	7
+Aedes aegypti	TF000702	Ty1_copia_Ele61	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000704	Ty1_copia_Ele62	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000705	Ty1_copia_Ele63	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	10
+Aedes aegypti	TF000707	Ty1_copia_Ele64	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000709	Ty1_copia_Ele65	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	4
+Aedes aegypti	TF000710	Ty1_copia_Ele66	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000711	Ty1_copia_Ele67	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000712	Ty1_copia_Ele68	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	13
+Aedes aegypti	TF000713	Ty1_copia_Ele69	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	12
+Aedes aegypti	TF000619	Ty1_copia_Ele7	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000716	Ty1_copia_Ele70	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000721	Ty1_copia_Ele71	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000723	Ty1_copia_Ele72	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000736	Ty1_copia_Ele73	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000748	Ty1_copia_Ele74	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	75
+Aedes aegypti	TF000749	Ty1_copia_Ele75	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000750	Ty1_copia_Ele76	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	30
+Aedes aegypti	TF000751	Ty1_copia_Ele77	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000752	Ty1_copia_Ele78	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	20
+Aedes aegypti	TF000753	Ty1_copia_Ele79	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	28
+Aedes aegypti	TF000620	Ty1_copia_Ele8	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000755	Ty1_copia_Ele80	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000756	Ty1_copia_Ele81	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	9
+Aedes aegypti	TF000758	Ty1_copia_Ele82	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000760	Ty1_copia_Ele83	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000762	Ty1_copia_Ele84	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	3
+Aedes aegypti	TF000764	Ty1_copia_Ele85	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000776	Ty1_copia_Ele86	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000778	Ty1_copia_Ele87	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	16
+Aedes aegypti	TF000781	Ty1_copia_Ele88	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	2
+Aedes aegypti	TF000783	Ty1_copia_Ele89	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	5
+Aedes aegypti	TF000621	Ty1_copia_Ele9	Class I	LTR Retrotransposons	Ty1_copia		Representative	Full	Yes	6
+Aedes aegypti	TF000937	Ty1_copia_Ele90	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000973	Ty1_copia_Ele91	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	4
+Aedes aegypti	TF000977	Ty1_copia_Ele92	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000978	Ty1_copia_Ele93	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000979	Ty1_copia_Ele94	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF000980	Ty1_copia_Ele95	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	3
+Aedes aegypti	TF000981	Ty1_copia_Ele96	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000982	Ty1_copia_Ele97	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	1
+Aedes aegypti	TF000983	Ty1_copia_Ele98	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	7
+Aedes aegypti	TF000984	Ty1_copia_Ele99	Class I	LTR Retrotransposons	Ty1_copia		Representative	Partial	Yes	2
+Aedes aegypti	TF000087	Ty3_gypsy_Ele1	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	9
+Aedes aegypti	TF000102	Ty3_gypsy_Ele10	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000382	Ty3_gypsy_Ele101	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000383	Ty3_gypsy_Ele102	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Reconstructed	Full	Yes	
+Aedes aegypti	TF000384	Ty3_gypsy_Ele103	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000385	Ty3_gypsy_Ele104	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000386	Ty3_gypsy_Ele105	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000387	Ty3_gypsy_Ele106	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000388	Ty3_gypsy_Ele107	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000389	Ty3_gypsy_Ele108	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000390	Ty3_gypsy_Ele109	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Consensus	Full	Yes	
+Aedes aegypti	TF000103	Ty3_gypsy_Ele11	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000391	Ty3_gypsy_Ele110	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Consensus	Full	Yes	
+Aedes aegypti	TF000392	Ty3_gypsy_Ele111	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Consensus	Full	Yes	
+Aedes aegypti	TF000412	Ty3_gypsy_Ele112	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000413	Ty3_gypsy_Ele113	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Consensus	Full	Yes	
+Aedes aegypti	TF000414	Ty3_gypsy_Ele114	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000415	Ty3_gypsy_Ele115	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000416	Ty3_gypsy_Ele116	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000417	Ty3_gypsy_Ele120	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000418	Ty3_gypsy_Ele121	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Reconstructed	Full	Yes	
+Aedes aegypti	TF000419	Ty3_gypsy_Ele122	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000420	Ty3_gypsy_Ele123	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000421	Ty3_gypsy_Ele124	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000422	Ty3_gypsy_Ele125	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000423	Ty3_gypsy_Ele126	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000424	Ty3_gypsy_Ele127	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Consensus	Full	Yes	
+Aedes aegypti	TF000425	Ty3_gypsy_Ele128	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000426	Ty3_gypsy_Ele129	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000104	Ty3_gypsy_Ele13	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000427	Ty3_gypsy_Ele130	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000475	Ty3_gypsy_Ele131	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Reconstructed	Full	Yes	
+Aedes aegypti	TF000476	Ty3_gypsy_Ele132	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000477	Ty3_gypsy_Ele134	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000478	Ty3_gypsy_Ele135	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Consensus	Full	Yes	
+Aedes aegypti	TF000479	Ty3_gypsy_Ele136	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000480	Ty3_gypsy_Ele137	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000481	Ty3_gypsy_Ele138	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000482	Ty3_gypsy_Ele139	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000105	Ty3_gypsy_Ele14	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000483	Ty3_gypsy_Ele140	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000484	Ty3_gypsy_Ele141	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Reconstructed	Full	Yes	
+Aedes aegypti	TF000485	Ty3_gypsy_Ele142	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000486	Ty3_gypsy_Ele143	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Reconstructed	Full	Yes	
+Aedes aegypti	TF000487	Ty3_gypsy_Ele144	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000488	Ty3_gypsy_Ele145	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000489	Ty3_gypsy_Ele146	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Consensus	Full	Yes	
+Aedes aegypti	TF000490	Ty3_gypsy_Ele147	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000513	Ty3_gypsy_Ele148	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000106	Ty3_gypsy_Ele15	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000491	Ty3_gypsy_Ele150	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Reconstructed	Full	Yes	
+Aedes aegypti	TF000512	Ty3_gypsy_Ele151	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000511	Ty3_gypsy_Ele152	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Consensus	Full	Yes	
+Aedes aegypti	TF000539	Ty3_gypsy_Ele153	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000540	Ty3_gypsy_Ele154	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000541	Ty3_gypsy_Ele155	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000542	Ty3_gypsy_Ele156	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Consensus	Full	Yes	
+Aedes aegypti	TF000543	Ty3_gypsy_Ele157	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000544	Ty3_gypsy_Ele158	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000545	Ty3_gypsy_Ele159	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000107	Ty3_gypsy_Ele16	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Consensus	Full	Yes	
+Aedes aegypti	TF000546	Ty3_gypsy_Ele160	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000547	Ty3_gypsy_Ele163	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000548	Ty3_gypsy_Ele164	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000549	Ty3_gypsy_Ele165	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000566	Ty3_gypsy_Ele167	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000567	Ty3_gypsy_Ele169	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000108	Ty3_gypsy_Ele17	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000569	Ty3_gypsy_Ele171	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Consensus	Full	Yes	
+Aedes aegypti	TF000944	Ty3_gypsy_Ele172	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000943	Ty3_gypsy_Ele173	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000942	Ty3_gypsy_Ele174	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000941	Ty3_gypsy_Ele175	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Reconstructed	Full	Yes	
+Aedes aegypti	TF000945	Ty3_gypsy_Ele176	Class I	LTR Retrotransposons	Ty3_gypsy	Osvalso	Representative	Full	Yes	
+Aedes aegypti	TF000946	Ty3_gypsy_Ele177	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000940	Ty3_gypsy_Ele178	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000947	Ty3_gypsy_Ele179	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000109	Ty3_gypsy_Ele18	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000939	Ty3_gypsy_Ele180	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000948	Ty3_gypsy_Ele181	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Reconstructed	Full	Yes	
+Aedes aegypti	TF000938	Ty3_gypsy_Ele182	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000936	Ty3_gypsy_Ele183	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000949	Ty3_gypsy_Ele184	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000935	Ty3_gypsy_Ele185	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000934	Ty3_gypsy_Ele187	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000933	Ty3_gypsy_Ele188	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000950	Ty3_gypsy_Ele189	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000110	Ty3_gypsy_Ele19	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000932	Ty3_gypsy_Ele190	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000931	Ty3_gypsy_Ele191	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000930	Ty3_gypsy_Ele192	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000929	Ty3_gypsy_Ele193	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000928	Ty3_gypsy_Ele194	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000927	Ty3_gypsy_Ele195	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000926	Ty3_gypsy_Ele196	Class I	LTR Retrotransposons	Ty3_gypsy	Osvaldo	Representative	Full	Yes	
+Aedes aegypti	TF000094	Ty3_gypsy_Ele2	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Consensus	Full	Yes	
+Aedes aegypti	TF000111	Ty3_gypsy_Ele20	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000112	Ty3_gypsy_Ele21	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000113	Ty3_gypsy_Ele22	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000114	Ty3_gypsy_Ele23	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Representative	Full	Yes	
+Aedes aegypti	TF000115	Ty3_gypsy_Ele24	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Consensus	Full	Yes	
+Aedes aegypti	TF000116	Ty3_gypsy_Ele25	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg3	Consensus	Full	Yes	
+Aedes aegypti	TF000117	Ty3_gypsy_Ele26	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000118	Ty3_gypsy_Ele27	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000119	Ty3_gypsy_Ele28	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000120	Ty3_gypsy_Ele29	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000095	Ty3_gypsy_Ele3	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000121	Ty3_gypsy_Ele30	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000122	Ty3_gypsy_Ele31	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000123	Ty3_gypsy_Ele32	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000124	Ty3_gypsy_Ele33	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000125	Ty3_gypsy_Ele34	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000126	Ty3_gypsy_Ele35	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000127	Ty3_gypsy_Ele36	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000128	Ty3_gypsy_Ele37	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000129	Ty3_gypsy_Ele38	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000134	Ty3_gypsy_Ele39	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000096	Ty3_gypsy_Ele4	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000135	Ty3_gypsy_Ele40	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000136	Ty3_gypsy_Ele41	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000137	Ty3_gypsy_Ele42	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000138	Ty3_gypsy_Ele43	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000139	Ty3_gypsy_Ele44	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000140	Ty3_gypsy_Ele45	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000141	Ty3_gypsy_Ele46	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000142	Ty3_gypsy_Ele47	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000143	Ty3_gypsy_Ele48	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000144	Ty3_gypsy_Ele49	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000097	Ty3_gypsy_Ele5	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000145	Ty3_gypsy_Ele50	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000146	Ty3_gypsy_Ele51	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000147	Ty3_gypsy_Ele52	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000316	Ty3_gypsy_Ele53	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000317	Ty3_gypsy_Ele54	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000318	Ty3_gypsy_Ele55	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Consensus	Full	Yes	
+Aedes aegypti	TF000319	Ty3_gypsy_Ele56	Class I	LTR Retrotransposons	Ty3_gypsy	Gypsy	Representative	Full	Yes	
+Aedes aegypti	TF000320	Ty3_gypsy_Ele57	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000321	Ty3_gypsy_Ele58	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000322	Ty3_gypsy_Ele59	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000098	Ty3_gypsy_Ele6	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000323	Ty3_gypsy_Ele60	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000325	Ty3_gypsy_Ele61	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000324	Ty3_gypsy_Ele62	Class I	LTR Retrotransposons	Ty3_gypsy	Mdg1	Representative	Full	Yes	
+Aedes aegypti	TF000335	Ty3_gypsy_Ele63	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000336	Ty3_gypsy_Ele64	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000337	Ty3_gypsy_Ele65	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000338	Ty3_gypsy_Ele66	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000339	Ty3_gypsy_Ele67	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000340	Ty3_gypsy_Ele68	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000341	Ty3_gypsy_Ele69	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000099	Ty3_gypsy_Ele7	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000342	Ty3_gypsy_Ele70	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000343	Ty3_gypsy_Ele71	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000344	Ty3_gypsy_Ele72	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000345	Ty3_gypsy_Ele73	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000346	Ty3_gypsy_Ele74	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Reconstructed	Full	Yes	
+Aedes aegypti	TF000347	Ty3_gypsy_Ele75	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Partial	Yes	
+Aedes aegypti	TF000348	Ty3_gypsy_Ele76	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000349	Ty3_gypsy_Ele77	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000350	Ty3_gypsy_Ele78	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Reconstructed	Full	Yes	
+Aedes aegypti	TF000364	Ty3_gypsy_Ele79	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000100	Ty3_gypsy_Ele8	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000365	Ty3_gypsy_Ele80	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000366	Ty3_gypsy_Ele81	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000368	Ty3_gypsy_Ele83	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000369	Ty3_gypsy_Ele84	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000370	Ty3_gypsy_Ele85	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000371	Ty3_gypsy_Ele86	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000372	Ty3_gypsy_Ele87	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Reconstructed	Full	Yes	
+Aedes aegypti	TF000101	Ty3_gypsy_Ele9	Class I	LTR Retrotransposons	Ty3_gypsy	CsRn1	Representative	Full	Yes	
+Aedes aegypti	TF000373	Ty3_gypsy_Ele91	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000374	Ty3_gypsy_Ele92	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000375	Ty3_gypsy_Ele93	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000376	Ty3_gypsy_Ele94	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000377	Ty3_gypsy_Ele95	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000378	Ty3_gypsy_Ele96	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000379	Ty3_gypsy_Ele97	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000380	Ty3_gypsy_Ele98	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Representative	Full	Yes	
+Aedes aegypti	TF000381	Ty3_gypsy_Ele99	Class I	LTR Retrotransposons	Ty3_gypsy	Mag	Consensus	Full	Yes	
+Aedes aegypti	TF000026	CR1_Ele1	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000041	CR1_Ele10	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000043	CR1_Ele11	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000049	CR1_Ele12	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000074	CR1_Ele13	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000051	CR1_Ele14	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000059	CR1_Ele15	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000061	CR1_Ele16	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000062	CR1_Ele17	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000063	CR1_Ele18	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000066	CR1_Ele19	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000030	CR1_Ele2	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000071	CR1_Ele20	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000072	CR1_Ele21	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000073	CR1_Ele22	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000149	CR1_Ele23	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000444	CR1_Ele24	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000445	CR1_Ele25	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000447	CR1_Ele26	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000448	CR1_Ele27	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000449	CR1_Ele28	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000451	CR1_Ele29	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000076	CR1_Ele3	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000452	CR1_Ele30	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000453	CR1_Ele31	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000454	CR1_Ele32	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000456	CR1_Ele33	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000462	CR1_Ele34	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000463	CR1_Ele35	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000464	CR1_Ele36	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000465	CR1_Ele37	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000466	CR1_Ele38	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000471	CR1_Ele39	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000032	CR1_Ele4	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000468	CR1_Ele40	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000469	CR1_Ele41	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000470	CR1_Ele42	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000034	CR1_Ele5	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000035	CR1_Ele6	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000036	CR1_Ele7	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000178	CR1_Ele8	Class I	Non-LTR Retrotransposons	CR1		Representative	Partial	Yes	
+Aedes aegypti	TF000038	CR1_Ele9	Class I	Non-LTR Retrotransposons	CR1		Representative	Full	Yes	
+Aedes aegypti	TF000020	I_Ele1	Class I	Non-LTR Retrotransposons	I		MosquI-Aa2Representative	Full	Yes	
+Aedes aegypti	TF000165	I_Ele10	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000176	I_Ele11	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000177	I_Ele12	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000181	I_Ele13	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000183	I_Ele14	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000187	I_Ele15	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000189	I_Ele16	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000191	I_ele17	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000196	I_ele18	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000199	I_ele19	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000027	I_Ele2	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000201	I_ele20	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000202	I_ele21	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000203	I_ele22	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000208	I_ele23	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000209	I_ele24	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000210	I_ele25	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000213	I_ele26	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000214	I_ele27	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000218	I_ele28	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000219	I_ele29	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000033	I_Ele3	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000220	I_ele30	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000221	I_ele31	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000222	I_ele32	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000223	I_ele33	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000161	I_Ele34	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000163	I_Ele35	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000179	I_Ele36	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000182	I_Ele37	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000152	I_Ele38	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000158	I_Ele39	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000442	I_Ele4	Class I	Non-LTR Retrotransposons	I		Representative	Partial	Yes	
+Aedes aegypti	TF000193	I_Ele40	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000204	I_Ele41	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000211	I_Ele42	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000433	I_Ele43	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000060	I_Ele5	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000070	I_Ele6	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000151	I_Ele7	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000155	I_Ele8	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000164	I_Ele9	Class I	Non-LTR Retrotransposons	I		Representative	Full	Yes	
+Aedes aegypti	TF000019	Jockey_Ele1	Class I	Non-LTR Retrotransposons	Jockey		Juan-ARepresentative	Full	Yes	
+Aedes aegypti	TF000450	Jockey_Ele10	Class I	Non-LTR Retrotransposons	Jockey		Representative	Full	Yes	
+Aedes aegypti	TF000055	Jockey_Ele2	Class I	Non-LTR Retrotransposons	Jockey		Representative	Partial	Yes	
+Aedes aegypti	TF000069	Jockey_Ele3	Class I	Non-LTR Retrotransposons	Jockey		Representative	Full	Yes	
+Aedes aegypti	TF000148	Jockey_Ele4	Class I	Non-LTR Retrotransposons	Jockey		Representative	Full	Yes	
+Aedes aegypti	TF000194	Jockey_Ele5	Class I	Non-LTR Retrotransposons	Jockey		Representative	Full	Yes	
+Aedes aegypti	TF000206	Jockey_Ele6	Class I	Non-LTR Retrotransposons	Jockey		Representative	Partial	Yes	
+Aedes aegypti	TF000429	Jockey_Ele7	Class I	Non-LTR Retrotransposons	Jockey		Representative	Partial	Yes	
+Aedes aegypti	TF000440	Jockey_Ele8	Class I	Non-LTR Retrotransposons	Jockey		Representative	Full	Yes	
+Aedes aegypti	TF000446	Jockey_Ele9	Class I	Non-LTR Retrotransposons	Jockey		Representative	Partial	Yes	
+Aedes aegypti	TF000005	L1_Ele1	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000154	L1_Ele10	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000156	L1_Ele11	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000159	L1_Ele12	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000160	L1_Ele13	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000162	L1_Ele14	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000167	L1_Ele15	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000168	L1_Ele16	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000169	L1_Ele17	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000170	L1_Ele18	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000173	L1_Ele19	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000006	L1_Ele2	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000175	L1_Ele20	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000180	L1_Ele21	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000184	L1_Ele22	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000188	L1_Ele23	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000195	L1_Ele24	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000197	L1_Ele25	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000200	L1_Ele26	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000207	L1_Ele27	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000215	L1_Ele28	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000217	L1_Ele29	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000028	L1_Ele3	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000029	L1_Ele4	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000053	L1_Ele5	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000054	L1_Ele6	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000065	L1_Ele7	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000150	L1_Ele8	Class I	Non-LTR Retrotransposons	L1		Representative	Partial	Yes	
+Aedes aegypti	TF000153	L1_Ele9	Class I	Non-LTR Retrotransposons	L1		Representative	Full	Yes	
+Aedes aegypti	TF000056	L2_Ele1	Class I	Non-LTR Retrotransposons	L2		Representative	Partial	Yes	
+Aedes aegypti	TF000057	L2_Ele2	Class I	Non-LTR Retrotransposons	L2		Representative	Full	Yes	
+Aedes aegypti	TF000058	L2_Ele3	Class I	Non-LTR Retrotransposons	L2		Representative	Full	Yes	
+Aedes aegypti	TF000064	L2_Ele4	Class I	Non-LTR Retrotransposons	L2		Representative	Full	Yes	
+Aedes aegypti	TF000007	L2_Ele5	Class I	Non-LTR Retrotransposons	L2		Representative	Full	Yes	
+Aedes aegypti	TF000031	L2_Ele6	Class I	Non-LTR Retrotransposons	L2		Representative	Full	Yes	
+Aedes aegypti	TF000436	L2_Ele7	Class I	Non-LTR Retrotransposons	L2		Representative	Partial	Yes	
+Aedes aegypti	TF000021	LOA_Ele1	Class I	Non-LTR Retrotransposons	LOA		LianRepresentative	Full	Yes	
+Aedes aegypti	TF000018	LOA_Ele2	Class I	Non-LTR Retrotransposons	LOA		Representative	Full	Yes	
+Aedes aegypti	TF000024	LOA_Ele3	Class I	Non-LTR Retrotransposons	LOA		Representative	Full	Yes	
+Aedes aegypti	TF000431	LOA_Ele4	Class I	Non-LTR Retrotransposons	LOA		Representative	Partial	Yes	
+Aedes aegypti	TF000432	LOA_Ele5	Class I	Non-LTR Retrotransposons	LOA		Representative	Full	Yes	
+Aedes aegypti	TF000434	LOA_Ele6	Class I	Non-LTR Retrotransposons	LOA		Representative	Partial	Yes	
+Aedes aegypti	TF000472	LOA_Ele7	Class I	Non-LTR Retrotransposons	LOA		Representative	Partial	Yes	
+Aedes aegypti	TF000008	Loner_Ele1	Class I	Non-LTR Retrotransposons	Loner		Representative	Full	Yes	
+Aedes aegypti	TF000009	Loner_Ele2	Class I	Non-LTR Retrotransposons	Loner		Representative	Full	Yes	
+Aedes aegypti	TF000474	Loner_Ele3	Class I	Non-LTR Retrotransposons	Loner		Representative	Full	Yes	
+Aedes aegypti	TF000050	Loner_Ele4	Class I	Non-LTR Retrotransposons	Loner		Representative	Full	Yes	
+Aedes aegypti	TF000012	Outcast_Ele1	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000186	Outcast_Ele10	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000190	Outcast_Ele11	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000192	Outcast_Ele12	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000205	Outcast_Ele13	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000212	Outcast_Ele14	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000216	Outcast_Ele15	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000013	Outcast_Ele2	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000014	Outcast_Ele3	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000015	Outcast_Ele4	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000157	Outcast_Ele5	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000166	Outcast_Ele6	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000172	Outcast_Ele7	Class I	Non-LTR Retrotransposons	Outcast		Representative	Full	Yes	
+Aedes aegypti	TF000174	Outcast_Ele8	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000185	Outcast_Ele9	Class I	Non-LTR Retrotransposons	Outcast		Representative	Partial	Yes	
+Aedes aegypti	TF000010	R1_Ele1	Class I	Non-LTR Retrotransposons	R1		Representative	Full	Yes	
+Aedes aegypti	TF000016	R1_Ele2	Class I	Non-LTR Retrotransposons	R1		Representative	Full	Yes	
+Aedes aegypti	TF000017	R1_Ele3	Class I	Non-LTR Retrotransposons	R1		Representative	Full	Yes	
+Aedes aegypti	TF000428	R1_Ele4	Class I	Non-LTR Retrotransposons	R1		Representative	Full	Yes	
+Aedes aegypti	TF000430	R1_Ele5	Class I	Non-LTR Retrotransposons	R1		Representative	Partial	Yes	
+Aedes aegypti	TF000439	R1_Ele6	Class I	Non-LTR Retrotransposons	R1		Reconstructed	Full	Yes	
+Aedes aegypti	TF000441	R1_Ele7	Class I	Non-LTR Retrotransposons	R1		Representative	Partial	Yes	
+Aedes aegypti	TF000443	R1_Ele8	Class I	Non-LTR Retrotransposons	R1		Representative	Partial	Yes	
+Aedes aegypti	TF000473	R1_Ele9	Class I	Non-LTR Retrotransposons	R1		Representative	Partial	Yes	
+Aedes aegypti	TF000040	R4_Ele1	Class I	Non-LTR Retrotransposons	R4		DongAaRepresentative	Full	Yes	
+Aedes aegypti	TF000022	RTE_Ele1	Class I	Non-LTR Retrotransposons	RTE		JAM1Representative	Full	Yes	
+Aedes aegypti	TF000023	RTE_Ele2	Class I	Non-LTR Retrotransposons	RTE		Representative	Full	Yes	
+Aedes aegypti	TF000067	RTE_Ele3	Class I	Non-LTR Retrotransposons	RTE		Representative	Full	Yes	
+Aedes aegypti	TF000171	RTE_Ele4	Class I	Non-LTR Retrotransposons	RTE		Representative	Full	Yes	
+Aedes aegypti	TF000435	RTE_Ele5	Class I	Non-LTR Retrotransposons	RTE		Representative	Full	Yes	
+Aedes aegypti	TF000455	RTE_Ele6	Class I	Non-LTR Retrotransposons	RTE		Representative	Full	Yes	
+Aedes aegypti	TF000572	tSINE_Ele1	Class I	SINEs	tSINE		Feilai_AConsensus	Full	Yes	
+Aedes aegypti	TF000573	tSINE_Ele2	Class I	SINEs	tSINE		Feilai_BConsensus	Full	Yes	
+Aedes aegypti	TF000574	tSINE_Ele3	Class I	SINEs	tSINE		geckoConsensus	Full	Yes	
+Aedes aegypti	TF000912	ITmD41D_Ele1	Class II	"Cut and paste" DNA transposons	DD41D		Representative	Partial	Yes	
+Aedes aegypti	TF000914	ITmD41D_Ele2	Class II	"Cut and paste" DNA transposons	DD41D		Representative	Partial	Yes	
+Aedes aegypti	TF000911	AeBuster1	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	4
+Aedes aegypti	TF000913	AeBuster2a	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	2
+Aedes aegypti	TF001335	AeBuster2b	Class II	"Cut and paste" DNA transposons	hAT		Representative	Partial	Yes	1
+Aedes aegypti	TF001186	AeBuster3	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	
+Aedes aegypti	TF001187	AeBuster4	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	3
+Aedes aegypti	TF001188	AeBuster5	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	1
+Aedes aegypti	TF001336	AeBuster7	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	2
+Aedes aegypti	TF001337	AeHermes1	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	1
+Aedes aegypti	TF001338	AeHermes2	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	1
+Aedes aegypti	TF000907	AeHerves2	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	2
+Aedes aegypti	TF000908	AeHerves3	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	2
+Aedes aegypti	TF000909	AeTip1	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	1
+Aedes aegypti	TF000910	AeTip2	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	2
+Aedes aegypti	TF001339	AeTol1	Class II	"Cut and paste" DNA transposons	hAT		Representative	Full	Yes	1
+Aedes aegypti	TF000904	ITmD37D_Ele1	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000905	ITmD37D_Ele2	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000915	ITmD37D_Ele3	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000916	ITmD37D_Ele4	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000917	ITmD37D_Ele5	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000918	ITmD37D_Ele6	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000919	ITmD37D_Ele7	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000920	ITmD37D_Ele8	Class II	"Cut and paste" DNA transposons	ITmD37D		Representative	Full	Yes	
+Aedes aegypti	TF000892	ITmD37E_Ele1	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000901	ITmD37E_Ele10	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000902	ITmD37E_Ele11	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000903	ITmD37E_Ele12	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000921	ITmD37E_Ele13	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000922	ITmD37E_Ele14	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000924	ITmD37E_Ele16	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Partial	Yes	
+Aedes aegypti	TF000925	ITmD37E_Ele17	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Partial	Yes	
+Aedes aegypti	TF001323	ITmD37E_Ele18	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000893	ITmD37E_Ele2	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000894	ITmD37E_Ele3	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000895	ITmD37E_Ele4	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000896	ITmD37E_Ele5	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000897	ITmD37E_Ele6	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000898	ITmD37E_Ele7	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000899	ITmD37E_Ele8	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF000900	ITmD37E_Ele9	Class II	"Cut and paste" DNA transposons	ITmD37E		Representative	Full	Yes	
+Aedes aegypti	TF001017	mariner_Ele1	Class II	"Cut and paste" DNA transposons	mariner		Representative	Partial	Yes	
+Aedes aegypti	TF001018	P_ele1	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001019	P_ele2	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001020	P_ele3	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001021	P_ele4a	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001022	P_ele4b	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001023	P_ele6	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001024	P_ele7	Class II	"Cut and paste" DNA transposons	P		Representative	Partial	Yes	
+Aedes aegypti	TF001162	PIF_Ele1	Class II	"Cut and paste" DNA transposons	PIF		Representative	Partial	Yes	
+Aedes aegypti	TF001163	PIF_Ele2	Class II	"Cut and paste" DNA transposons	PIF		Representative	Partial	Yes	
+Aedes aegypti	TF001164	PIF_Ele3	Class II	"Cut and paste" DNA transposons	PIF		Representative	Partial	Yes	
+Aedes aegypti	TF001165	PIF_Ele4	Class II	"Cut and paste" DNA transposons	PIF		Representative	Partial	Yes	
+Aedes aegypti	TF001166	PIF_Ele5	Class II	"Cut and paste" DNA transposons	PIF		Representative	Full	Yes	
+Aedes aegypti	TF001167	PIF_Ele6	Class II	"Cut and paste" DNA transposons	PIF		Representative	Full	Yes	
+Aedes aegypti	TF001168	PIF_Ele7	Class II	"Cut and paste" DNA transposons	PIF		Representative	Partial	Yes	
+Aedes aegypti	TF001025	piggyBac_Ele1	Class II	"Cut and paste" DNA transposons	piggyBac		Representative	Partial	Yes	
+Aedes aegypti	TF001026	piggyBac_Ele2	Class II	"Cut and paste" DNA transposons	piggyBac		Representative	Partial	Yes	
+Aedes aegypti	TF001027	piggyBac_Ele3	Class II	"Cut and paste" DNA transposons	piggyBac		Representative	Partial	Yes	
+Aedes aegypti	TF001028	piggyBac_Ele4	Class II	"Cut and paste" DNA transposons	piggyBac		Representative	Partial	Yes	
+Aedes aegypti	TF001093	Pogo_Ele1	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001102	Pogo_Ele10	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001103	Pogo_Ele11	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001104	Pogo_Ele12	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001105	Pogo_Ele13	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001106	Pogo_Ele14	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001107	Pogo_Ele15	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001108	Pogo_Ele16	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001109	Pogo_Ele17	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001110	Pogo_Ele18	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001111	Pogo_Ele19	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001094	Pogo_Ele2	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF000356	Pogo_Ele20	Class II	"Cut and paste" DNA transposons	pogo		Consensus	Partial	Yes	
+Aedes aegypti	TF000357	Pogo_Ele21	Class II	"Cut and paste" DNA transposons	pogo		Representative	Partial	Yes	
+Aedes aegypti	TF000359	Pogo_Ele22	Class II	"Cut and paste" DNA transposons	pogo		Representative	Partial	Yes	
+Aedes aegypti	TF001095	Pogo_Ele3	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001096	Pogo_Ele4	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001097	Pogo_Ele5	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001098	Pogo_Ele6	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001099	Pogo_Ele7	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001100	Pogo_Ele8	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001101	Pogo_Ele9	Class II	"Cut and paste" DNA transposons	pogo		Representative	Full	Yes	
+Aedes aegypti	TF001007	Tc1_Ele10	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001008	Tc1_Ele11	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001009	Tc1_Ele12	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001010	Tc1_Ele13	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001011	Tc1_Ele14	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001012	Tc1_Ele15	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF001013	Tc1_Ele16	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF001014	Tc1_Ele17	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF001015	Tc1_Ele18	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF001016	Tc1_Ele19	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF000536	Tc1_Ele1a	Class II	"Cut and paste" DNA transposons	Tc1		AeTango1aRepresentative	Full	Yes	
+Aedes aegypti	TF000551	Tc1_Ele1b	Class II	"Cut and paste" DNA transposons	Tc1		AeTango1bRepresentative	Partial	Yes	
+Aedes aegypti	TF000537	Tc1_Ele2	Class II	"Cut and paste" DNA transposons	Tc1		AeTango2Representative	Full	Yes	
+Aedes aegypti	TF000538	Tc1_Ele3	Class II	"Cut and paste" DNA transposons	Tc1		AeTango3Representative	Partial	Yes	
+Aedes aegypti	TF000552	Tc1_Ele4	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF000553	Tc1_Ele5	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF000554	Tc1_Ele6	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Partial	Yes	
+Aedes aegypti	TF000555	Tc1_Ele7	Class II	"Cut and paste" DNA transposons	Tc1		MsqTc3Consensus	Full	Yes	
+Aedes aegypti	TF001005	Tc1_Ele8	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001006	Tc1_Ele9	Class II	"Cut and paste" DNA transposons	Tc1		Representative	Full	Yes	
+Aedes aegypti	TF001169	Helitron_Ele1	Class II	Helitrons	Helitron		Representative	Partial	Yes	
+Aedes aegypti	TF001170	Helitron_Ele2	Class II	Helitrons	Helitron		Representative	Partial	Yes	
+Aedes aegypti	TF000664	m3bp_Ele1	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000665	m3bp_Ele2	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000672	m3bp_Ele3	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000674	m3bp_Ele4	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000676	m3bp_Ele5	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000677	m3bp_Ele6	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000679	m3bp_Ele7	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF001251	m3bp_Ele8a	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF001252	m3bp_Ele8b	Class II	MITEs	m3bp		Representative	Full	Yes	
+Aedes aegypti	TF000577	m4bp_Ele1	Class II	MITEs	m4bp		WukongConsensus	Full	Yes	
+Aedes aegypti	TF000692	m4bp_Ele10	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000694	m4bp_Ele11	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001254	m4bp_Ele13	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001255	m4bp_Ele14a	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001277	m4bp_Ele14b	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001256	m4bp_Ele15	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001257	m4bp_Ele16	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001260	m4bp_Ele17a	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001316	m4bp_Ele17b	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF001276	m4bp_Ele18	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000578	m4bp_Ele2	Class II	MITEs	m4bp		WunengConsensus	Full	Yes	
+Aedes aegypti	TF001318	m4bp_Ele20	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000579	m4bp_Ele3	Class II	MITEs	m4bp		YouziRepresentative	Full	Yes	
+Aedes aegypti	TF000680	m4bp_Ele4	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000681	m4bp_Ele5	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000683	m4bp_Ele6	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000685	m4bp_Ele7	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000687	m4bp_Ele8	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000689	m4bp_Ele9	Class II	MITEs	m4bp		Representative	Full	Yes	
+Aedes aegypti	TF000576	m8bp_Ele1	Class II	MITEs	m8bp		HomeyRepresentative	Full	Yes	
+Aedes aegypti	TF000719	m8bp_Ele10	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000720	m8bp_Ele11	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000722	m8bp_Ele12	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000724	m8bp_Ele13	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000725	m8bp_Ele14	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001258	m8bp_Ele15	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001274	m8bp_Ele16	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001275	m8bp_Ele17	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001302	m8bp_Ele18	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001310	m8bp_Ele19	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000700	m8bp_Ele2	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001312	m8bp_Ele20	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF001332	m8bp_Ele21	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000703	m8bp_Ele3	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000706	m8bp_Ele4	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000708	m8bp_Ele5	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000714	m8bp_Ele6	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000715	m8bp_Ele7	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000717	m8bp_Ele8	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000718	m8bp_Ele9	Class II	MITEs	m8bp		Representative	Full	Yes	
+Aedes aegypti	TF000726	m9bp_Ele1	Class II	MITEs	m9bp		Representative	Full	Yes	
+Aedes aegypti	TF000727	m9bp_Ele2	Class II	MITEs	m9bp		Representative	Full	Yes	
+Aedes aegypti	TF000570	mTA_Ele1	Class II	MITEs	mTA		Pony-AConsensus	Full	Yes	
+Aedes aegypti	TF000733	mTA_Ele10	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000734	mTA_Ele11	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000735	mTA_Ele12	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000737	mTA_Ele13	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000738	mTA_Ele14	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000739	mTA_Ele15	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000740	mTA_Ele16	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000741	mTA_Ele17	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000742	mTA_Ele18	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000743	mTA_Ele19	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000571	mTA_Ele2	Class II	MITEs	mTA		Pony_BConsensus	Full	Yes	
+Aedes aegypti	TF000744	mTA_Ele20	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000745	mTA_Ele21	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000746	mTA_Ele22	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000747	mTA_Ele23	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001239	mTA_Ele24	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001240	mTA_Ele25	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001241	mTA_Ele26	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001242	mTA_Ele27	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001243	mTA_Ele28a	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001321	mTA_Ele28b	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001308	mTA_Ele28c	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001244	mTA_Ele29	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000580	mTA_Ele3	Class II	MITEs	mTA		WujinRepresentative	Full	Yes	
+Aedes aegypti	TF001245	mTA_Ele30	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001246	mTA_Ele31	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001247	mTA_Ele32	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001248	mTA_Ele33	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001249	mTA_Ele34	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001250	mTA_Ele35	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001264	mTA_Ele36	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001266	mTA_Ele38a	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001294	mTA_Ele38b	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001295	mTA_Ele38c	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001267	mTA_Ele39	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000581	mTA_Ele4	Class II	MITEs	mTA		KaizokuRepresentative	Full	Yes	
+Aedes aegypti	TF001268	mTA_Ele40	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001269	mTA_Ele41	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001270	mTA_Ele42	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001271	mTA_Ele43	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001272	mTA_Ele44	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001273	mTA_Ele45	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001283	mTA_Ele46	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001297	mTA_Ele47	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001298	mTA_Ele48	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001301	mTA_Ele49	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000728	mTA_Ele5	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001305	mTA_Ele50	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001306	mTA_Ele51	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001309	mTA_Ele52	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001311	mTA_Ele53	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001314	mTA_Ele54	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF001319	mTA_Ele55	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000729	mTA_Ele6	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000730	mTA_Ele7	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000731	mTA_Ele8	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000732	mTA_Ele9	Class II	MITEs	mTA		Representative	Full	Yes	
+Aedes aegypti	TF000696	m7bp_Ele1	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF000698	m7bp_Ele2	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF000699	m7bp_Ele3	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF000575	otherMITEs_Ele1	Class II	MITEs	otherMITEs		MicrouliRepresentative	Full	Yes	
+Aedes aegypti	TF001284	otherMITEs_Ele10	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001285	otherMITEs_Ele11	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001286	otherMITEs_Ele12	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001287	otherMITEs_Ele13	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001288	otherMITEs_Ele14	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001289	otherMITEs_Ele15	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001290	otherMITEs_Ele16	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001291	otherMITEs_Ele17	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001292	otherMITEs_Ele18	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001259	otherMITEs_Ele2	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001296	otherMITEs_Ele20	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001299	otherMITEs_Ele21	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001300	otherMITEs_Ele22a	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001307	otherMITEs_Ele22b	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001303	otherMITEs_Ele23	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001304	otherMITEs_Ele24	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001313	otherMITEs_Ele27	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001317	otherMITEs_Ele30	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001320	otherMITEs_Ele31	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001322	otherMITEs_Ele32	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001325	otherMITEs_Ele33	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001265	otherMITEs_Ele34	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001261	otherMITEs_Ele3a	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001253	otherMITEs_Ele3b	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001262	otherMITEs_Ele4	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001278	otherMITEs_Ele5	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001279	otherMITEs_Ele6	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001280	otherMITEs_Ele7	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001281	otherMITEs_Ele8	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF001282	otherMITEs_Ele9	Class II	MITEs	otherMITEs		Representative	Full	Yes	
+Aedes aegypti	TF000039	Penelope_Ele1	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000044	Penelope_Ele2	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000045	Penelope_Ele3	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000046	Penelope_Ele4	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000048	Penelope_Ele5	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000068	Penelope_Ele6	Penelope	Penelope	Penelope		Representative	Full	Yes	
+Aedes aegypti	TF000077	Penelope_Ele7	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF000075	Penelope_Ele8	Penelope	Penelope	Penelope		Representative	Partial	Yes	
+Aedes aegypti	TF001439	Tandem_Ele1	UD	UD	UD		Representative	Full	Yes	
+Aedes aegypti	TF001436	Tandem_Ele2	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001437	Tandem_Ele3	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001438	Tandem_Ele4	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001324	UD_Ele1	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001326	UD_Ele2a	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001327	UD_Ele2b	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001328	UD_Ele2c	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001329	UD_Ele3a	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001330	UD_Ele3b	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001331	UD_Ele3c	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001315	UD_Ele4	UD	UD	UD		Representative	Full	Yes	
+Aedes aegypti	TF001333	UD_Ele5	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001334	UD_Ele6	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001263	UD_Ele7	UD	UD	UD		Representative	Partial	Yes	
+Aedes aegypti	TF001293	UD_Ele8	UD	UD	UD		Representative	Partial	Yes	
+

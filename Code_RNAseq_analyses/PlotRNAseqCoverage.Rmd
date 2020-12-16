@@ -1,0 +1,274 @@
+---
+title: "Coverage plots of RNAseq tracks"
+author: "Rebecca Halbach"
+contact: "rebecca.halbach@radboudumc.nl"
+date: "04/05/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Goal
+
+This script creates coverage plots of the tapiR repeat locus, or of genes that are not annotated in the AaegL5 gene set (but were in the AaegL3 version). 
+It requires the gene annotation in gff3 format from VectorBase (AaegL5.1),  bam files, and bigwig files (per strand) from RNAseq data.
+The following libraries were used:
+
+* Aag2 control AO (SRR7938854)
+* Aag2 tapiR1 AO (SRR7938864)
+
+#### Load packages
+
+Requires the following packages:  
+
+* tidyverse 1.2.1
+* RSamtools 2.0.0
+* rtracklayer 1.44.2
+* GenomicFeatures 1.36.4
+* Gviz 1.28.1
+
+```{r, message=FALSE}
+
+library(tidyverse)
+library(Rsamtools)
+library(rtracklayer)
+library(GenomicFeatures)
+library(Gviz)
+
+```
+
+#### General settings
+
+1. Directories used:
+
+```{r}
+dirAnnotation <- "/home/rebecca/Dokumente/Rstuff/Sonstiges/smallRNAs_pipeline/Annotation/Aedes-aegypti-LVP_AGWG_BASEFEATURES_AaegL5.1.gff3."
+dirBAMFile  <- "./BAMfiles"
+dirBigWigFiles <- "../flippi_antipi/Flippi_antipi/bigwigsforunannotated/"
+```
+
+#### Annotation data
+
+1. Import gene annotation data from VectorBase AaegL5.1 gene set
+
+```{r}
+
+filePath <- dir(dirAnnotation, ".gff3")
+fileAnnotation <- file.path(dirAnnotation, filePath
+                            )
+genes <- import.gff3(fileAnnotation) %>% 
+         subset(., grepl("AAEL017385|AAEL020149|AAEL019845|AAEL025516|AAEL005945", .$Parent)) #genes within regions to plot
+
+#Gviz requires TxDb for making gene track
+AaeTxdb <- makeTxDbFromGRanges(genes) 
+
+genes <- exonsBy(AaeTxdb, 
+              by = "tx", 
+              use.names = TRUE)
+genes <- unlist(genes)
+elementMetadata(genes)$transcript <- names(genes)
+
+```
+
+2. Crate general tracks for plotting (gene track, axis track)
+
+```{r}
+
+genetrack <- GeneRegionTrack(genes, 
+                           transcriptAnnotation = "transcript", 
+                           shape ="fixedArrow", 
+                           fill = "#4575B4", 
+                           arrowHeadMaxWidth = 10, 
+                           fontcolor.group = "black", 
+                           lwd = 2,
+                           options(ucscChromosomeNames = FALSE))
+
+
+axtrack <- GenomeAxisTrack(fontcolor="black")
+
+```
+
+3. Load bam files for coverage plots of the tapiR1/2 locus
+
+```{r}
+
+filePath <- dir(dirBAMFile, "*.bam$")
+filesRNAseq <- file.path(dirBAMFile, filePath)
+
+indexBam(filesRNAseq[1]) #needs to be executed ony once, and oly if index file does not exist yet
+indexBam(filesRNAseq[2]) #needs to be executed ony once, and oly if index file does not exist yet
+
+names <- c( "controlAO", "tapiR1AO")
+names(filesRNAseq) <- names
+
+```
+
+
+4. create alignment tracks from bam files
+
+```{r}
+
+alTapiR1 <- AlignmentsTrack(filesRNAseq[1], isPaired = TRUE)
+
+alControl <- AlignmentsTrack(filesRNAseq[2], isPaired = TRUE)
+
+```
+
+5. Load bigwig files for coverage plots of unannotated target genes
+
+```{r}
+
+filePath = dir(dirBigWigFiles, ".bw")
+filesBigWig=file.path(dirBigWigFiles, filePath)
+
+samplenames= c("controlAO_FWD", "controlAO_REV" , "tapiR1AO_FWD", "tapiR1AO_REV")
+
+for (i in 1: length(filesBigWig)){
+        
+  bigWig <- import.bw(filesBigWig[i])
+  
+  #subset file to speed up 
+  bigWig <- bigWig[(seqnames(bigWig) == 3 & start(bigWig) >= 31209088 & end(bigWig) <= 31246459) | #AAEL017422
+        (seqnames(bigWig) == 2 & start(bigWig) >= 384110000 & end(bigWig) <= 384120000) | #AAEL001741
+        (seqnames(bigWig) == 1 & start(bigWig) >= 258661510 & end(bigWig) <= 258705959)] #AAEL000453
+  
+  assign(paste(samplenames[i], "bw", sep="."), bigWig)
+}
+
+#Change strand of reverse files
+strand(controlAO_REV.bw) <- "-"
+controlAO_REV.bw$score <- controlAO_REV.bw$score * -1
+
+strand(tapiR1AO_REV.bw) <- "-"
+tapiR1AO_REV.bw$score <- tapiR1AO_REV.bw$score * -1
+
+strand(controlAO_FWD.bw) <- "+"
+
+strand(tapiR1AO_FWD.bw) <- "+"
+
+```
+
+6. Create alignment tracks from bigwig files (per strand)
+
+```{r}
+
+trackSettings <- list(options(ucscChromosomeNames=FALSE),
+                      type = "histogram",
+                      fill.histogram = "#313695", 
+                      col.title = "black", 
+                      col.axis = "black",
+                      background.title = "white")
+
+bwTrackTapiR1AOR <- DataTrack(tapiR1AO_REV.bw, 
+                              name = "tapiR1 AO", 
+                              trackSettings)
+
+bwTrackTapiR1AOF <- DataTrack(tapiR1AO_FWD.bw, 
+                              name = "tapiR1 AO",
+                              trackSettings)
+
+bwTrackControlAOF <- DataTrack(controlAO_FWD.bw, 
+                               name = "control AO",
+                               trackSettings)
+
+bwTrackControlAOR <- DataTrack(controlAO_REV.bw, 
+                               name = "control AO",
+                               trackSettings)
+
+```
+
+#### Plot mRNAseq coverage tapiR1/2 repeat locus
+
+```{r FlippilocusmRNAseq, fig.height=6, fig.width=6}
+
+chromosome(genetrack) <- "3"
+plotTracks(list(axtrack, genetrack, alControl, alTapiR1), 
+           from = 41155000, 
+           to = 41160000, 
+           extend.left = 500,
+           col.title = "black",  
+           col.axis = "black", 
+           background.title = "white", 
+           cex.axis = 0.6, 
+           sizes = c(0.5, 0.5, 2, 2), 
+           type = c("coverage", "sashimi"))
+
+
+```
+
+
+#### Plot coverage of genes not annotated in AaegL5
+
+The genes AAEL001741, AAEL017422, and AAEL000453 were only annotated in the AaegL3 genome version, but lost in AaegL5.
+
+1. Coverage of AAEL001741 (name in AaegL3)
+
+```{r, fig.height=3, fig.width=7}
+#set y axis
+displayPars(bwTrackTapiR1AOR) <- list(ylim = c(-50,0))
+displayPars(bwTrackControlAOR) <- list(ylim = c(-50,0))
+
+#no annotated genes in this region
+ht <- HighlightTrack(trackList = list(axtrack, bwTrackControlAOR,  bwTrackTapiR1AOR), 
+                    start = 384115770, 
+                    width = 35, 
+                    chromosome = "2" )
+
+plotTracks(list( ht), 
+           from = 384115000, 
+           to = 384117000, 
+           chromosome = "2" , 
+           sizes = c(0.8,1,1), 
+           type = "histogram")
+
+```
+
+2. Coverage of AAEL017422 (name in AaegL3)
+
+```{r, fig.height=3, fig.width=7}
+
+#set y axis
+displayPars(bwTrackTapiR1AOF) <- list(ylim = c(0,150))
+displayPars(bwTrackControlAOF) <- list(ylim = c(0,150))
+
+
+chromosome(genetrack) <- "3"
+ht <- HighlightTrack(trackList = list(axtrack, genetrack, bwTrackControlAOF, bwTrackTapiR1AOF), 
+                     start = 31234306, 
+                     width = 26, 
+                     chromosome = "3" )
+
+plotTracks(list( ht), 
+           from = 31230000, 
+           to = 31250000, 
+           chromosome = "3" , 
+           sizes = c(0.8,0.2,1,1), 
+           type = "histogram")
+
+```
+
+3. Coverage of AAEL000453 (name in AaegL3)
+
+```{r, fig.height=3, fig.width=7}
+
+displayPars(bwTrackControlAOR) <- list(ylim = c(-10,0))
+displayPars(bwTrackTapiR1AOR) <- list(ylim = c(-10,0))
+
+
+chromosome(genetrack) <- "1"
+ht<- HighlightTrack(trackList = list(axtrack, genetrack, bwTrackControlAOR,  bwTrackTapiR1AOR), 
+                    start = 258685137, 
+                    width = 20, 
+                    chromosome = "1" )
+
+plotTracks(list( ht), 
+           from = 258675000, 
+           to = 258695959,  
+           chromosome = "1", 
+           sizes = c(0.8,0.2,1,1),
+           type = "histogram")
+
+```
+
